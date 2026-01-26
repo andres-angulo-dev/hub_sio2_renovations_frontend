@@ -23,10 +23,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
+        <div className="fixed inset-0 bg-black/ -z-5"></div>
+        
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="fixed top-0 left-0 w-full h-full object-cover -z-10"
+        >
+          <source src='/background.mp4' type='video/mp4' />
+        </video> 
+        
         {children}
       </body>
     </html>
