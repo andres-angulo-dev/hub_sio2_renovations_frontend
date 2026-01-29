@@ -20,7 +20,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col items-center gap-2 mb-4'>
             <Image alt="phone-icon" layout="fixed" src='/phone-icon.png' width={35} height={35} />
-            <p className='text-center break-all'>07.56.88.87.01</p>
+            <p className='text-center break-all text-black'>contact@sio2renovations.com</p>
           </div>
         </div>
         
@@ -39,9 +39,9 @@ export default function Home() {
 
       <div className='mt-20 flex justify-center text-sm'>
         <span className='flex flex-wrap gap-1'>
-          <p>© 2026 | Tous droits réservés | Réalisé par</p>
+          <p className="text-black">© 2026 | Tous droits réservés | Réalisé par</p>
           <a href='https://www.andres-angulo.com/'>
-            <span className='hover:text-[#F39220]'>Andrés Angulo</span>
+            <span className='hover:text-[#F39220] text-black'>Andrés Angulo</span>
           </a>
         </span>
         <p>.</p>
