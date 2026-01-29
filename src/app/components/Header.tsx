@@ -13,24 +13,12 @@ const Header: React.FC<HeaderProps> = ({ title, presentation, logoUrl }) => {
     return( 
         <header className="flex flex-col items-center text-center gap-3 py-6">
             {logoUrl && (
-                <div className="
-                        relative w-50 h-50 
-                        rounded-full 
-                        bg-white 
-                        border-4 
-                        border-[#F39220] 
-                        overflow-hidden 
-                        flex 
-                        items-center 
-                        justify-center 
-                        shadow-lg
-                        p-20
-                    "
-                >
+                <div className="bg-white rounded-full border-4 border-[#F39220] shadow-lg p-5">
                     <Image
                         src={logoUrl}
                         alt="Logo"
-                        layout="fill"
+                        width={150}
+                        height={150}
                     />
                 </div>
             )}
