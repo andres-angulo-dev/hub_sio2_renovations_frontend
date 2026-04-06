@@ -33,12 +33,13 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Contact info — email and phone side by side */}
-          <div className="flex gap-2 pt-5">
+          {/* Contact info — stacked on mobile, side by side on sm+ */}
+          <div className="flex flex-col gap-2 pt-5 sm:flex-row">
 
             {/* Email block */}
-            <div
-              className="flex-[2] min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2"
+            <a
+              href="mailto:contact@sio2renovations.com"
+              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2 sm:flex-[2] hover:bg-orange-100 transition-colors"
               style={{ borderLeft: '3px solid #F39220' }}
             >
               <FontAwesomeIcon icon={faEnvelope} className="text-[#F39220] flex-shrink-0 text-xs" />
@@ -46,11 +47,12 @@ export default function Home() {
                 <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Email</span>
                 <span className="text-[12px] text-gray-700 truncate">contact@sio2renovations.com</span>
               </div>
-            </div>
+            </a>
 
             {/* Phone block */}
-            <div
-              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2"
+            <a
+              href="tel:0756888701"
+              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2 hover:bg-orange-100 transition-colors"
               style={{ borderLeft: '3px solid #F39220' }}
             >
               <FontAwesomeIcon icon={faPhone} className="text-[#F39220] flex-shrink-0 text-xs" />
@@ -58,7 +60,7 @@ export default function Home() {
                 <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Téléphone</span>
                 <span className="text-[12px] text-gray-700 truncate">07 56 88 87 01</span>
               </div>
-            </div>
+            </a>
 
           </div>
 
