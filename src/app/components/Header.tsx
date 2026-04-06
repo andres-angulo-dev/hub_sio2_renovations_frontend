@@ -1,39 +1,42 @@
 "use client";
 
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 interface HeaderProps {
     logoUrl?: string;
     title: string;
-    presentation?: string;
+    description?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, presentation, logoUrl }) => {
-    return( 
-        <header className="flex flex-col items-center text-center gap-3 py-6">
+// Hub page header: logo, company name and short description
+const Header: React.FC<HeaderProps> = ({ title, description, logoUrl }) => {
+    return (
+        <header className="flex flex-col items-center text-center gap-3 pt-8">
             {logoUrl && (
-                <div className="bg-white rounded-full border-4 border-[#F39220] shadow-lg p-5">
+                // Logo circle with orange ring and subtle glow
+                <div className="bg-white rounded-full border-[5px] border-[#F39220] shadow-[0_0_0_8px_rgba(243,146,32,0.12),0_8px_24px_rgba(0,0,0,0.12)] w-[116px] h-[116px] flex items-center justify-center overflow-hidden flex-shrink-0">
                     <Image
                         src={logoUrl}
-                        alt="Logo"
-                        width={150}
-                        height={150}
+                        alt="Logo SiO₂ Rénovations"
+                        width={90}
+                        height={90}
+                        style={{ objectFit: 'contain' }}
                     />
                 </div>
             )}
 
-            <h1 className="text-2xl font-bold text-gray-900 pt-4">
+            <h1 className="text-2xl font-extrabold text-gray-900 mt-1 pt-10">
                 {title}
             </h1>
 
-            {presentation && (
-                <p className="text-gray-600 text-base">
-                    {presentation}
+            {description && (
+                <p className="text-gray-500 text-sm leading-relaxed">
+                    {description}
                 </p>
             )}
-        </header> 
-    )
-}
+        </header>
+    );
+};
 
 export default Header;

@@ -1,51 +1,80 @@
-import Image from "next/legacy/image";
 import Header from './components/Header';
 import LinkButton from './components/LinkButton';
 import { links } from './data/links';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
-    <div className="px-5">
-      <main className='flex flex-col justify-between min-h-screen max-w-md mx-auto px-4 py-4 bg-orange-100'>
-        <div>
+    // Centered white column — same width as card, full screen height
+    <div className="min-h-screen flex justify-center px-4">
+
+      <main className="min-h-screen w-full max-w-sm bg-white px-6 flex flex-col">
+
+        {/* Main content — vertically centered in available space */}
+        <div className="flex-1 flex flex-col gap-8 py-10">
+
+          {/* Logo, title and description */}
           <Header
-            logoUrl='https://raw.githubusercontent.com/andres-angulo-dev/sio2_renovations_frontend/refs/heads/main/assets/black_logo.svg'
-            title="Entreprise générale du bâtiment tous corps d'état"
-            presentation="Au fil des années, nous avons construit une expertise solide qui nous permet d’orchestrer chaque projet avec une vision globale. De la rénovation complète aux ajustements les plus précis, nous transformons vos idées en réalité en alliant esthétique, maîtrise technique, respect des délais et des normes actuelles."
+            logoUrl="https://raw.githubusercontent.com/andres-angulo-dev/sio2_renovations_frontend/refs/heads/main/assets/black_logo.svg"
+            title="SiO₂ Rénovations"
+            description="Des artisans expérimentés à votre service pour tous vos projets de rénovation. Chaque intervention est menée avec précision, professionnalisme et souci du travail bien fait, pour un résultat à la hauteur de vos attentes."
           />
 
-          <div className='mt-6'>
-            <div className='flex flex-col items-center gap-2 mb-5'>
-              <Image alt="email-icon" layout="fixed" src='/email-icon.png' width={35} height={35} />
-              <p className='text-center break-all text-black'>contact@sio2renovations.com</p>
-            </div>
-            <div className='flex flex-col items-center gap-2 mb-4'>
-              <Image alt="phone-icon" layout="fixed" src='/phone-icon.png' width={35} height={35} />
-              <p className='text-center break-all text-black'>07 56 88 87 01</p>
-            </div>
-          </div>
-
-          <div className='pt-6'>
+          {/* Redirect buttons */}
+          <div className="flex flex-col gap-3 pt-8">
             {links.map((item) => (
-              <LinkButton 
-                key= {item.url}
-                label= {item.label}
+              <LinkButton
+                key={item.url}
+                label={item.label}
                 url={item.url}
                 icon={item.icon}
               />
             ))}
           </div>
+
+          {/* Contact info — email and phone side by side */}
+          <div className="flex gap-2 pt-5">
+
+            {/* Email block */}
+            <div
+              className="flex-[2] min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2"
+              style={{ borderLeft: '3px solid #F39220' }}
+            >
+              <FontAwesomeIcon icon={faEnvelope} className="text-[#F39220] flex-shrink-0 text-xs" />
+              <div className="flex flex-col gap-0 min-w-0">
+                <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Email</span>
+                <span className="text-[12px] text-gray-700 truncate">contact@sio2renovations.com</span>
+              </div>
+            </div>
+
+            {/* Phone block */}
+            <div
+              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2"
+              style={{ borderLeft: '3px solid #F39220' }}
+            >
+              <FontAwesomeIcon icon={faPhone} className="text-[#F39220] flex-shrink-0 text-xs" />
+              <div className="flex flex-col gap-0 min-w-0">
+                <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Téléphone</span>
+                <span className="text-[12px] text-gray-700 truncate">07 56 88 87 01</span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
-          
-        <div className='flex justify-center flex-wrap text-sm text-center'>
-          <p className="text-black">© 2026 | Tous droits réservés | Réalisé par&nbsp;</p>
-          <a href='https://www.andres-angulo.com/'>
-            <span className='hover:text-[#F39220] text-black'>Andrés Angulo</span>
-          </a>
-          <p>.</p>
-        </div>  
+
+        {/* Footer — pinned to bottom with spacing */}
+        <footer className="pb-8 pt-4">
+          <p className="text-center text-xs text-gray-400">
+            © 2026 | Tous droits réservés | Réalisé par{" "}
+            <a href="https://www.andres-angulo.com/" className="hover:text-[#F39220] transition-colors">
+              Andrés Angulo
+            </a>
+          </p>
+        </footer>
+
       </main>
     </div>
-
-  )
+  );
 }

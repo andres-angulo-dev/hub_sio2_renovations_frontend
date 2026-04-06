@@ -8,22 +8,26 @@ interface LinkButtonProps {
     icon?: React.ReactNode;
 }
 
-const linkButton: React.FC<LinkButtonProps> = ({
-    label,
-    url,
-    icon,
-}) => {
+// Redirect button with orange gradient and subtle hover effect
+const LinkButton: React.FC<LinkButtonProps> = ({ label, url, icon }) => {
     return (
-        <a 
+        <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 justify-center w-full px-4 py-3 bg-[#F39220] rounded-full shadow-md hover:bg-orange-100 transition-all duration-200 mb-3"
+            className="relative flex items-center justify-center w-full px-4 py-4 rounded-xl text-white font-semibold cursor-pointer transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            style={{
+                background: 'linear-gradient(135deg, #F39220, #D4700A)',
+                boxShadow: '0 4px 15px rgba(243,146,32,0.4)',
+                borderLeft: '4px solid rgba(255,220,120,0.75)',
+            }}
         >
-            {icon && <span className="text-2xl">{icon}</span>}
-            <span className="font-medium text-black brea">{label}</span>
+            {/* Icon anchored to the left */}
+            {icon && <span className="absolute left-4 text-lg">{icon}</span>}
+            {/* Label centered across the full width */}
+            <span>{label}</span>
         </a>
-    )
-}
+    );
+};
 
-export default linkButton
+export default LinkButton;
