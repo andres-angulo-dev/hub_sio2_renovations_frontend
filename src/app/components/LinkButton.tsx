@@ -15,10 +15,10 @@ const LinkButton: React.FC<LinkButtonProps> = ({ label, url, icon }) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex items-center justify-center w-full px-4 py-4 rounded-xl text-white font-semibold cursor-pointer transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="relative flex items-center justify-center w-full px-4 py-4 rounded-lg text-white font-semibold cursor-pointer transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             style={{
-                background: 'linear-gradient(135deg, #F39220, #D4700A)',
-                boxShadow: '0 4px 15px rgba(243,146,32,0.4)',
+                background: 'linear-gradient(135deg, #f39220, #8c4f00)',
+                boxShadow: '0 8px 30px rgba(30,27,23,0.08)',
                 borderLeft: '4px solid rgba(255,220,120,0.75)',
             }}
         >

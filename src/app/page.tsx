@@ -9,7 +9,7 @@ export default function Home() {
     // Centered white column — same width as card, full screen height
     <div className="min-h-screen flex justify-center px-4">
 
-      <main className="min-h-screen w-full max-w-sm bg-white px-6 flex flex-col">
+      <main className="min-h-screen w-full max-w-sm px-6 flex flex-col" style={{ background: 'rgba(255,248,241,0.85)', backdropFilter: 'blur(24px)', border: '1px solid rgba(218,194,175,0.15)' }}>
 
         {/* Main content — vertically centered in available space */}
         <div className="flex-1 flex flex-col gap-8 py-10">
@@ -39,10 +39,12 @@ export default function Home() {
             {/* Email block */}
             <a
               href="mailto:contact@sio2renovations.com"
-              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2 sm:flex-[2] hover:bg-orange-100 transition-colors"
-              style={{ borderLeft: '3px solid #F39220' }}
+              className="min-w-0 flex items-center gap-2 rounded-xl px-2 py-2 sm:flex-[2] hover:bg-orange-100 transition-colors"
+              style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.15)', boxShadow: '0 8px 30px rgba(30,27,23,0.06)' }}
             >
-              <FontAwesomeIcon icon={faEnvelope} className="text-[#F39220] flex-shrink-0 text-xs" />
+              <span style={{ width: 28, height: 28, background: 'rgba(255,220,191,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <FontAwesomeIcon icon={faEnvelope} className="text-[#F39220] text-xs" />
+              </span>
               <div className="flex flex-col gap-0 min-w-0">
                 <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Email</span>
                 <span className="text-[12px] text-gray-700 truncate">contact@sio2renovations.com</span>
@@ -52,10 +54,12 @@ export default function Home() {
             {/* Phone block */}
             <a
               href="tel:0756888701"
-              className="min-w-0 flex items-center gap-2 bg-orange-50 rounded-xl px-2 py-2 hover:bg-orange-100 transition-colors"
-              style={{ borderLeft: '3px solid #F39220' }}
+              className="min-w-0 flex items-center gap-2 rounded-xl px-2 py-2 hover:bg-orange-100 transition-colors"
+              style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.15)', boxShadow: '0 8px 30px rgba(30,27,23,0.06)' }}
             >
-              <FontAwesomeIcon icon={faPhone} className="text-[#F39220] flex-shrink-0 text-xs" />
+              <span style={{ width: 28, height: 28, background: 'rgba(255,220,191,0.3)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <FontAwesomeIcon icon={faPhone} className="text-[#F39220] text-xs" />
+              </span>
               <div className="flex flex-col gap-0 min-w-0">
                 <span className="text-[10px] font-semibold tracking-widest text-gray-400 uppercase truncate">Téléphone</span>
                 <span className="text-[12px] text-gray-700 truncate">07 56 88 87 01</span>

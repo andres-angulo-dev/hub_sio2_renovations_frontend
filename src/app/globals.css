@@ -1,32 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8f1;
+  --foreground: #1e1b17;
+  --on-surface: #1e1b17;
+  --on-surface-variant: #544435;
+  --surface-container-low: #f9f3eb;
+  --outline-variant: #dac2af;
+  --primary-fixed: #ffdcbf;
+  --accent-orange: #f39220;
+  --primary: #8c4f00;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-be-vietnam);
+  --font-headline: var(--font-plus-jakarta);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--on-surface);
+  font-family: var(--font-be-vietnam), 'Be Vietnam Pro', Arial, sans-serif;
 }
 
-svg {
-  width: 1em;
-  height: 1em;
-}
+svg { width: 1em; height: 1em; }
 
-video {
-  animation: fadeIn 1.5s ease-out forwards;
-}
+video { animation: fadeIn 1.5s ease-out forwards; }
 
 @keyframes fadeIn {
   from { opacity: 0; }

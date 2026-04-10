@@ -26,12 +26,14 @@ const Header: React.FC<HeaderProps> = ({ title, description, logoUrl }) => {
                 </div>
             )}
 
-            <h1 className="text-2xl font-extrabold text-gray-900 mt-1 pt-10">
+            <h1 style={{ fontFamily: 'var(--font-plus-jakarta)', color: '#1e1b17', letterSpacing: '-0.02em', lineHeight: 1.1 }} className="text-4xl font-extrabold mt-1 pt-8">
                 {title}
             </h1>
 
+            <div style={{ width: '100%', height: 1, background: '#f39220', opacity: 0.5, marginTop: 8, marginBottom: 4 }} />
+
             {description && (
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p style={{ color: '#544435', fontFamily: 'var(--font-be-vietnam)' }} className="text-sm leading-relaxed">
                     {description}
                 </p>
             )}
