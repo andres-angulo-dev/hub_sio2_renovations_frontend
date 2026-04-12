@@ -25,7 +25,7 @@ export default function Home() {
 
       <main
         className="min-h-screen w-full max-w-sm px-6 flex flex-col"
-        style={{ ...t.glass }}
+        style={{ background: '#ffffff', backdropFilter: 'blur(24px)', border: '1px solid rgba(218,194,175,0.15)' }}
       >
         <div className="flex-1 flex flex-col gap-8 py-10">
 
