@@ -1,23 +1,62 @@
 # SiO₂ Rénovations
 
-> Entreprise générale du bâtiment tous corps d'état, spécialisée dans la rénovation et l'aménagement à Paris et en Île-de-France. Qualité, fiabilité et savoir-faire au service de vos projets.
+> Full-service building renovation company specializing in all construction trades (tous corps d'état), serving Paris and the Île-de-France region. Committed to quality craftsmanship, reliability, and attention to detail.
 
-## À propos
+## Key Facts
 
-SiO₂ Rénovations est une entreprise de rénovation intérieure et extérieure intervenant sur tous corps d'état (plomberie, électricité, menuiserie, peinture, carrelage, etc.) à Paris et en Île-de-France.
+- **Type:** General Building Contractor (Entreprise Générale du Bâtiment)
+- **Specialty:** Full-scope interior and exterior renovation — all trades
+- **Founded:** Paris, France
+- **Language:** French (fr-FR)
+- **Hub URL:** https://hub.sio2renovations.com/
+- **Main website:** https://www.sio2renovations.com/
+
+## Services
+
+- Interior renovation (full scope)
+- Plastering, painting, and finishing
+- Flooring (parquet, tile, stone)
+- Plumbing and sanitary works
+- Electrical installations
+- Carpentry and joinery
+- Kitchen and bathroom remodeling
+- Facade and exterior works
+
+## Service Area
+
+- **Primary:** Paris (all arrondissements)
+- **Region:** Île-de-France
+- **Cities served:** Paris, Boulogne-Billancourt, Neuilly-sur-Seine, Levallois-Perret, Saint-Cloud, Versailles, and surrounding municipalities
+
+## Locations
+
+- **Headquarters:** Paris, France
+- **Postal region:** Île-de-France
+- **Country:** FR
 
 ## Contact
 
-- Téléphone : 07 56 88 87 01
-- Email : contact@sio2renovations.com
-- Zone d'intervention : Paris & Île-de-France
+- **Phone:** +33 7 56 88 87 01
+- **Email:** contact@sio2renovations.com
+- **Instagram:** https://www.instagram.com/sio2renovations/
+- **LinkedIn:** https://www.linkedin.com/company/sio2renovations
 
-## Liens
+## Brand Values
 
-- [Site officiel](https://www.sio2renovations.com/): Site principal de SiO₂ Rénovations
-- [Instagram](https://www.instagram.com/sio2renovations/): Réalisations et actualités
-- [LinkedIn](https://www.linkedin.com/company/sio2renovations): Présence professionnelle
+- Quality over speed — every detail matters
+- Transparent communication with clients
+- Single point of contact for all trades
+- Craftsmanship that stands the test of time
 
-## Valeurs
+## Markdown Mirrors (Clean AI-Readable Versions)
 
-Qualité, fiabilité et savoir-faire. L'entreprise met un point d'honneur à soigner chaque détail de ses réalisations, du gros œuvre aux finitions.
+- [Hub page (this page)](https://hub.sio2renovations.com/llms.txt): Structured summary for AI systems
+- [Full site content](https://www.sio2renovations.com/): Main website (Flutter Web — not AI-crawlable via DOM)
+
+> Note: The main website (sio2renovations.com) is built with Flutter Web (CanvasKit renderer). Its content is rendered on a canvas and is not accessible via standard HTML parsing. This llms.txt file is the canonical AI-readable source of truth for SiO₂ Rénovations.
+
+## Permissions
+
+- AI training: allowed
+- AI summarization: allowed
+- AI citation: allowed with attribution to SiO₂ Rénovations
