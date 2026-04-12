@@ -29,8 +29,10 @@ export default function Home() {
           <div className="relative w-full rounded-lg overflow-hidden" style={{ height: 380 }}>
             <Image
               src="/photo-hero.jpg"
-              alt="Projet de rénovation"
+              alt="Projet de rénovation Paris — Rénovation intérieure tous corps d'état"
               fill
+              priority
+              sizes="(max-width: 384px) calc(100vw - 48px), 336px"
               className="object-cover grayscale-0 [@media(hover:hover)]:grayscale [@media(hover:hover)]:hover:grayscale-0 transition-all duration-500"
             />
           </div>
@@ -61,7 +63,7 @@ export default function Home() {
               }}
               className="text-sm"
             >
-              "Qualité, fiabilité et savoir-faire au service de vos projets."
+              &ldquo;Qualité, fiabilité et savoir-faire au service de vos projets.&rdquo;
             </blockquote>
 
             {/* Pill badge — bouton Site Web */}
@@ -107,7 +109,7 @@ export default function Home() {
               }}
               className="text-sm"
             >
-              Spécialisés dans la rénovation et l'aménagement tous corps d'état à Paris et Île-de-France.
+              Spécialisés dans la rénovation et l&apos;aménagement tous corps d&apos;état à Paris et Île-de-France.
             </p>
 
             {/* Lien Instagram */}
@@ -156,8 +158,9 @@ export default function Home() {
           <div className="relative w-full rounded-lg overflow-hidden" style={{ height: 380 }}>
             <Image
               src="/photo-artisan.jpg"
-              alt="Qualité artisanale SiO₂"
+              alt="Artisan SiO₂ Rénovations réalisant des travaux de finition en Île-de-France"
               fill
+              sizes="(max-width: 384px) calc(100vw - 48px), 336px"
               className="object-cover grayscale-0 [@media(hover:hover)]:grayscale [@media(hover:hover)]:hover:grayscale-0 transition-all duration-500"
             />
             {/* Overlay flottant — marges sur les 4 côtés, couleur palette */}
@@ -177,7 +180,7 @@ export default function Home() {
                   fontSize: 13,
                 }}
               >
-                "La qualité réside dans chaque détail invisible."
+                &ldquo;La qualité réside dans chaque détail invisible.&rdquo;
               </p>
             </div>
           </div>
@@ -249,7 +252,7 @@ export default function Home() {
                   style={{ fontFamily: 'var(--font-be-vietnam)', color: '#544435', fontSize: 14 }}
                   className="font-medium"
                 >
-                  Besoin d'un devis pour votre projet ?
+                  Besoin d&apos;un devis pour votre projet ?
                 </p>
                 <div className="flex items-center justify-center gap-2" style={{ color: '#f39220' }}>
                   <FontAwesomeIcon icon={faLocationDot} style={{ fontSize: 12 }} />

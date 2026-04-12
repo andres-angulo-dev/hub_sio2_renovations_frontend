@@ -34,6 +34,31 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SiO₂ Rénovations",
+  "description": "Entreprise générale du bâtiment tous corps d'état, spécialisée dans la rénovation et l'aménagement à Paris et en Île-de-France.",
+  "url": "https://www.sio2renovations.com",
+  "telephone": "+33756888701",
+  "email": "contact@sio2renovations.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Paris",
+    "addressRegion": "Île-de-France",
+    "addressCountry": "FR",
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Paris" },
+    { "@type": "AdministrativeArea", "name": "Île-de-France" },
+  ],
+  "image": "https://raw.githubusercontent.com/andres-angulo-dev/sio2_renovations_frontend/refs/heads/main/web/icons/cover.webp",
+  "sameAs": [
+    "https://www.instagram.com/sio2renovations/",
+    "https://www.linkedin.com/company/sio2renovations",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,6 +66,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        {/* JSON-LD — données structurées LocalBusiness pour le SEO local */}
+        {/* Contenu hardcodé côté serveur, aucun risque XSS */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} // eslint-disable-line react/no-danger
+        />
+      </head>
       <body className={`${beVietnamPro.variable} antialiased`}>
         {/* Dark overlay on top of the video for readability */}
         <div className="fixed inset-0 bg-black/50 -z-5" />
@@ -51,6 +84,7 @@ export default function RootLayout({
           loop
           muted
           playsInline
+          preload="none"
           className="fixed top-0 left-0 w-full h-full object-cover -z-10"
         >
           <source src="/background.mp4" type="video/mp4" />
