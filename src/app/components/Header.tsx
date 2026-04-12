@@ -59,7 +59,7 @@ function Header({ logoUrl, title }: HeaderProps) {
           letterSpacing: '-0.02em',
           lineHeight: 1.05,
         }}
-        className="text-4xl font-black"
+        className="text-4xl font-bold"
       >
         {title}
       </h1>
