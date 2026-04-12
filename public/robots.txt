@@ -1,4 +1,7 @@
 User-agent: *
+Disallow: /404.html
+Disallow: /_next/
+Disallow: /api/
 Allow: /
 
 Sitemap: https://hub.sio2renovations.com/sitemap.xml
