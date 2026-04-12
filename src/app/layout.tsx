@@ -5,7 +5,7 @@ import "./globals.css";
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description: "SiO₂ Rénovations est une entreprise générale du bâtiment tous corps d'état, spécialisée dans la rénovation et l'aménagement à Paris et en Île-de-France. Qualité, fiabilité et savoir-faire au service de vos projets.",
   keywords: "rénovation, entreprise générale du bâtiment, aménagement, tous corps d'état, travaux de rénovation, rénovation intérieure, rénovation extérieure, bâtiment, rénovation Paris",
   authors: [{ name: "Andrés Angulo" }],
+  alternates: {
+    canonical: "https://hub.sio2renovations.com/",
+  },
   openGraph: {
     title: "SiO₂ Rénovations | Entreprise générale du bâtiment tous corps d'état à Paris et Île-de-France",
     siteName: "SiO₂ Rénovations",

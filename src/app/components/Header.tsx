@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import Image from "next/image";
 
 interface HeaderProps {
@@ -10,14 +7,14 @@ interface HeaderProps {
 
 /**
  * Header éditorial — style "The Modern Atelier"
- * Disposition : logo à gauche + label "Maison de Qualité" à droite
- * puis titre grand format sur 2 lignes + signature thread orange 1px
+ * Disposition : logo à gauche + label "Entreprise Générale du Bâtiment" à droite
+ * puis titre grand format + signature thread orange 1px
  */
-const Header: React.FC<HeaderProps> = ({ logoUrl, title }) => {
+function Header({ logoUrl, title }: HeaderProps) {
   return (
     <header className="flex flex-col gap-5 pt-8">
 
-      {/* Ligne 1 : Logo (gauche) + label Maison de Qualité (droite) */}
+      {/* Ligne 1 : Logo (gauche) + label éditorial (droite) */}
       <div className="flex items-center">
         {logoUrl && (
           // Cercle orange border avec ombre ambiante
@@ -54,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ logoUrl, title }) => {
         </span>
       </div>
 
-      {/* Titre grand éditorial — 2 lignes */}
+      {/* Titre grand éditorial */}
       <h1
         style={{
           fontFamily: 'var(--font-be-vietnam)',
@@ -72,6 +69,6 @@ const Header: React.FC<HeaderProps> = ({ logoUrl, title }) => {
 
     </header>
   );
-};
+}
 
 export default Header;

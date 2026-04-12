@@ -21,7 +21,7 @@ export default function Home() {
 
           {/* ── 1. Header éditorial ── */}
           <Header
-            logoUrl="https://raw.githubusercontent.com/andres-angulo-dev/sio2_renovations_frontend/refs/heads/main/assets/black_logo.svg"
+            logoUrl="/black_logo.svg"
             title="SiO₂ Rénovations"
           />
 
