@@ -1,0 +1,43 @@
+{
+  "title": "Questions fréquentes — SiO2 Rénovations",
+  "description": "Les réponses aux questions les plus posées sur nos prestations de rénovation en Île-de-France : délais, devis, assurances, agréments.",
+  "slug": "faq",
+  "published": true,
+  "questions": [
+    {
+      "question": "Combien de temps dure une rénovation complète d'appartement ?",
+      "answer": "Pour un appartement de 50 à 80 m² en rénovation complète (cuisine, salle de bains, électricité, plomberie, peinture), comptez entre 8 et 12 semaines de chantier, une fois tous les matériaux approvisionnés. Les délais s'allongent si l'immeuble impose des horaires de travaux restreints ou en cas de modifications structurelles nécessitant l'accord de la copropriété.",
+      "category": "Délais",
+      "slug": "duree-renovation-complete-appartement",
+      "published": true
+    },
+    {
+      "question": "Le devis est-il gratuit ?",
+      "answer": "Oui, tout devis SiO2 Rénovations est gratuit, sans engagement, et détaille poste par poste la main d'œuvre et les fournitures. Nous nous déplaçons pour une visite technique avant d'établir le devis — cela évite les mauvaises surprises une fois le chantier démarré.",
+      "category": "Devis & Tarifs",
+      "slug": "devis-gratuit",
+      "published": true
+    },
+    {
+      "question": "Quelles assurances couvrent votre entreprise ?",
+      "answer": "SiO2 Rénovations dispose de la responsabilité civile professionnelle et de la garantie décennale obligatoire, couvrant l'ensemble des travaux de gros œuvre et second œuvre pendant 10 ans à compter de la réception du chantier. Les attestations sont fournies à chaque signature de devis.",
+      "category": "Assurances & Garanties",
+      "slug": "assurances-garanties",
+      "published": true
+    },
+    {
+      "question": "Intervenez-vous en dehors de Paris et de l'Île-de-France ?",
+      "answer": "Notre zone d'intervention couvre Paris intra-muros et l'ensemble des départements d'Île-de-France (75, 77, 78, 91, 92, 93, 94, 95). Les déplacements au-delà sont étudiés au cas par cas selon la nature et la durée du chantier.",
+      "category": "Zone d'intervention",
+      "slug": "zone-intervention-ile-de-france",
+      "published": true
+    },
+    {
+      "question": "Gérez-vous les démarches administratives (autorisations, copropriété) ?",
+      "answer": "Oui. Pour chaque chantier, nous conseillons sur les autorisations nécessaires (déclaration préalable de travaux, permis de construire, accord de copropriété) et pouvons prendre en charge les échanges avec le syndic ainsi que le dépôt des dossiers en mairie.",
+      "category": "Démarches administratives",
+      "slug": "demarches-administratives",
+      "published": true
+    }
+  ]
+}
