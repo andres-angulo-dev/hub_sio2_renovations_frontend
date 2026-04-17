@@ -52,6 +52,7 @@
 
 - [Articles index](https://hub.sio2renovations.com/articles): All published renovation guides
 - [Rénover un appartement à Paris — guide complet 2026](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet): Costs (400–3,500 €/m²), permits, co-ownership rules, common mistakes
+- [Rénover une salle de bains à Paris 2026](https://hub.sio2renovations.com/articles/renovation-salle-de-bains-paris): Costs (1,000–3,000 €/m²), NF C 15-100 electrical standards, permits, financial aid (MaPrimeAdapt')
 - [FAQ — Questions fréquentes](https://hub.sio2renovations.com/faq): Answers to common renovation questions in Île-de-France
 - [Rénovation complète à Paris](https://hub.sio2renovations.com/paris/renovation-complete): Local service page for full renovation in Paris
 

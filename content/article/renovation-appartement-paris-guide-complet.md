@@ -72,6 +72,8 @@ Deux facteurs font systématiquement varier ces fourchettes à Paris :
 
 Pour la rénovation énergétique spécifiquement, une étude sectorielle de 2024 relève un coût moyen de **742 €/m²** pour un appartement parisien ([Ithaque Rénovation, 2024](https://www.ithaque-renovation.fr/post/742-euros-le-cout-moyen-au-m2-de-la-renovation-energetique-dun-appartement-a-paris)), des aides MaPrimeRénov' déduites.
 
+La salle de bains concentre souvent 20 à 30 % du budget global d'une rénovation complète. Les fourchettes et contraintes spécifiques à ce poste sont détaillées dans [notre guide sur la rénovation de salle de bains à Paris](https://hub.sio2renovations.com/articles/renovation-salle-de-bains-paris).
+
 ## Quelles sont les erreurs les plus coûteuses ?
 
 La plus classique : démarrer les travaux avant d'avoir l'accord du syndic sur les points qui relèvent de la copropriété. Une remise en état forcée peut coûter deux à trois fois le prix des travaux initiaux. Sans compter les frais d'avocat si la situation dégénère en contentieux.
