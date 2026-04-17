@@ -21,6 +21,8 @@ export interface ArticleFrontMatter {
   cover?: string;
   tags?: string[];
   reviewed_by?: string;
+  author?: string;
+  lastUpdated?: string; // ISO 8601 "YYYY-MM-DD" — used for freshness signals and dateModified schema
 }
 
 // FAQ entry — single question/answer. FaqFrontMatter covers the document-level

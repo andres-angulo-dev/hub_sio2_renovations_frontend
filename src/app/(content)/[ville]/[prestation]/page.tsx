@@ -30,6 +30,15 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getAllLocalPages, getLocalPageBySlug } from '@/lib/content';
 
+function estimateReadingTime(html: string): number {
+  const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  return Math.max(1, Math.ceil(text.split(' ').filter(Boolean).length / 200));
+}
+
+function formatSlug(slug: string): string {
+  return slug.replace(/-/g, '\u00a0').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 // -- Static generation config ------------------------------------------------
 
 /**
@@ -195,25 +204,51 @@ export default async function LocalServicePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      {/* Article wrapper — semantic element for article-like content */}
       <article>
-        {/* Page title — matches frontmatter title field */}
-        <h1
-          className="text-3xl md:text-4xl font-bold mb-8 leading-tight"
-          style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
-        >
-          {page.title}
-        </h1>
+        {/* ── Header ── */}
+        <header className="mb-8">
+          {/* Badges ville + prestation */}
+          <div className="flex flex-wrap gap-2 mb-5">
+            <span
+              className="inline-block rounded-full px-3 py-1 text-xs font-medium"
+              style={{ background: '#fff3e0', color: '#8c4f00', border: '1px solid #ffdcbf', fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              {villeName}
+            </span>
+            <span
+              className="inline-block rounded-full px-3 py-1 text-xs font-medium"
+              style={{ background: '#fff3e0', color: '#8c4f00', border: '1px solid #ffdcbf', fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              {formatSlug(page.prestation)}
+            </span>
+          </div>
 
-        {/* Rendered markdown body — Tailwind Typography prose for readable hierarchy */}
-        {/* Content is git-committed markdown reviewed before commit — not user input */}
+          {/* H1 */}
+          <h1
+            className="text-3xl md:text-4xl font-bold leading-tight mb-4"
+            style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
+          >
+            {page.title}
+          </h1>
+
+          {/* Description subtitle */}
+          <p
+            className="text-base leading-relaxed mb-5"
+            style={{ color: '#544435', fontFamily: 'var(--font-be-vietnam)' }}
+          >
+            {page.description}
+          </p>
+
+          {/* Meta — temps de lecture */}
+          <div className="text-sm" style={{ color: '#b0956b', fontFamily: 'var(--font-be-vietnam)' }}>
+            {estimateReadingTime(page.html)} min de lecture
+          </div>
+        </header>
+
+        {/* Rendered markdown body */}
         <div
           className="prose prose-lg max-w-none mb-10"
-          style={{
-            color: '#544435',
-            lineHeight: 1.85,
-            fontFamily: 'var(--font-be-vietnam)',
-          }}
+          style={{ fontFamily: 'var(--font-be-vietnam)' }}
           dangerouslySetInnerHTML={{ __html: page.html }}
         />
       </article>

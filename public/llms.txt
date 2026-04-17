@@ -48,12 +48,19 @@
 - Single point of contact for all trades
 - Craftsmanship that stands the test of time
 
+## Editorial Content (AI-Readable Articles)
+
+- [Articles index](https://hub.sio2renovations.com/articles): All published renovation guides
+- [Rénover un appartement à Paris — guide complet 2026](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet): Costs (400–3,500 €/m²), permits, co-ownership rules, common mistakes
+- [FAQ — Questions fréquentes](https://hub.sio2renovations.com/faq): Answers to common renovation questions in Île-de-France
+- [Rénovation complète à Paris](https://hub.sio2renovations.com/paris/renovation-complete): Local service page for full renovation in Paris
+
 ## Markdown Mirrors (Clean AI-Readable Versions)
 
 - [Hub page (this page)](https://hub.sio2renovations.com/llms.txt): Structured summary for AI systems
 - [Full site content](https://www.sio2renovations.com/): Main website (Flutter Web — not AI-crawlable via DOM)
 
-> Note: The main website (sio2renovations.com) is built with Flutter Web (CanvasKit renderer). Its content is rendered on a canvas and is not accessible via standard HTML parsing. This llms.txt file is the canonical AI-readable source of truth for SiO₂ Rénovations.
+> Note: The main website (sio2renovations.com) is built with Flutter Web (CanvasKit renderer). Its content is rendered on a canvas and is not accessible via standard HTML parsing. This llms.txt file and the hub articles are the canonical AI-readable sources of truth for SiO₂ Rénovations.
 
 ## Permissions
 

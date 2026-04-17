@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #fff8f1;
@@ -32,4 +33,24 @@ video { animation: fadeIn 1.5s ease-out forwards; }
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Prose typography — design system colors for article/local content */
+.prose {
+  --tw-prose-body: #544435;
+  --tw-prose-headings: #1e1b17;
+  --tw-prose-lead: #544435;
+  --tw-prose-links: #8c4f00;
+  --tw-prose-bold: #1e1b17;
+  --tw-prose-counters: #8c4f00;
+  --tw-prose-bullets: #f39220;
+  --tw-prose-hr: #dac2af;
+  --tw-prose-quotes: #544435;
+  --tw-prose-quote-borders: #f39220;
+  --tw-prose-captions: #b0956b;
+  --tw-prose-code: #8c4f00;
+  --tw-prose-pre-code: #f9f3eb;
+  --tw-prose-pre-bg: #1e1b17;
+  --tw-prose-th-borders: #dac2af;
+  --tw-prose-td-borders: #dac2af;
 }

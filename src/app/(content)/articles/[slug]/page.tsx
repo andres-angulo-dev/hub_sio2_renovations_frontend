@@ -28,8 +28,40 @@
 //      Edge runtime would crash at build time.
 
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getAllArticles, getArticleBySlug } from '@/lib/content';
+
+// Strips HTML tags and estimates reading time at 200 wpm, minimum 1 minute.
+function estimateReadingTime(html: string): number {
+  const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const wordCount = text.split(' ').filter(Boolean).length;
+  return Math.max(1, Math.ceil(wordCount / 200));
+}
+
+// Splits article HTML into { body, faqItems }.
+// body = prose without the FAQ section (injected into the prose block).
+// faqItems = extracted Q&A pairs with answerHtml for accordion rendering.
+// Looks for an H2 containing "questions" (case-insensitive) as the FAQ boundary.
+// Returns faqItems: null when no FAQ section is detected — accordions are not rendered.
+function splitArticleHtml(html: string): {
+  body: string;
+  faqItems: Array<{ question: string; answerHtml: string }> | null;
+} {
+  const strip = (s: string) => s.replace(/<[^>]+>/g, '').trim();
+  const faqIdx = html.search(/<h2[^>]*>[^<]*[Qq]uestions[^<]*<\/h2>/);
+  if (faqIdx === -1) return { body: html, faqItems: null };
+  const body = html.slice(0, faqIdx);
+  const afterFaq = html.slice(faqIdx);
+  const afterFaqHeading = afterFaq.slice(afterFaq.indexOf('</h2>') + 5);
+  const nextH2 = afterFaqHeading.search(/<h2[^>]*>/);
+  const faqSection = nextH2 > -1 ? afterFaqHeading.slice(0, nextH2) : afterFaqHeading;
+  const pattern = /<h3[^>]*>([\s\S]*?)<\/h3>\s*(<p[\s\S]*?<\/p>)/g;
+  const faqItems = [...faqSection.matchAll(pattern)]
+    .map((m) => ({ question: strip(m[1]), answerHtml: m[2] }))
+    .filter((item) => item.question && item.answerHtml);
+  return { body, faqItems: faqItems.length > 0 ? faqItems : null };
+}
 
 // Disable runtime fallback for unknown slugs.
 // Next.js will automatically return 404 for any slug not in generateStaticParams().
@@ -76,6 +108,7 @@ export async function generateMetadata({
       publishedTime: article.date,
       url: `https://hub.sio2renovations.com/articles/${slug}`,
       siteName: 'SiO2 Renovations Hub',
+      ...(article.cover ? { images: [{ url: article.cover }] } : {}),
     },
   };
 }
@@ -98,8 +131,10 @@ export default async function ArticlePage({
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
 
-  // notFound() for null articles — handles edge cases not caught by dynamicParams=false
   if (!article) notFound();
+
+  const readingTime = estimateReadingTime(article.html);
+  const { body, faqItems } = splitArticleHtml(article.html);
 
   // -- JSON-LD: Article schema ------------------------------------------
   const articleJsonLd = {
@@ -108,7 +143,7 @@ export default async function ArticlePage({
     headline: article.title,
     description: article.description,
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.lastUpdated ?? article.date,
     author: {
       '@type': 'Organization',
       name: 'SiO2 Renovations',
@@ -152,6 +187,21 @@ export default async function ArticlePage({
     ],
   };
 
+  // -- JSON-LD: FAQPage schema — only injected when FAQ section detected --
+  // Google uses this for FAQ rich snippets in search results (accordion display).
+  // Extraction is automatic via extractFaqFromHtml — no manual frontmatter needed.
+  const faqJsonLd = faqItems && faqItems.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqItems.map(({ question, answerHtml }) => ({
+          '@type': 'Question',
+          name: question,
+          acceptedAnswer: { '@type': 'Answer', text: answerHtml.replace(/<[^>]+>/g, '').trim() },
+        })),
+      }
+    : null;
+
   return (
     <>
       {/* JSON-LD — Article schema for Google rich results */}
@@ -164,48 +214,161 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {/* JSON-LD — FAQPage for Google FAQ rich snippets (only when FAQ section present) */}
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <article>
-        {/* Publication date — French locale, UTC-safe parsing */}
-        <time
-          dateTime={article.date}
-          style={{
-            color: '#b0956b',
-            fontSize: 13,
-            fontFamily: 'var(--font-be-vietnam)',
-          }}
-        >
-          {new Date(article.date + 'T00:00:00').toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
-        </time>
+        {/* ── Header ── */}
+        <header className="mb-8">
+          {/* Tags — pill chips, orange palette */}
+          {article.tags && article.tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-5">
+              {article.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-block rounded-full px-3 py-1 text-xs font-medium tracking-wide"
+                  style={{
+                    background: '#fff3e0',
+                    color: '#8c4f00',
+                    border: '1px solid #ffdcbf',
+                    fontFamily: 'var(--font-be-vietnam)',
+                  }}
+                >
+                  {tag.replace(/-/g, '\u00a0')}
+                </span>
+              ))}
+            </div>
+          )}
 
-        {/* Article title */}
-        <h1
-          className="text-2xl font-bold mt-2 mb-6"
-          style={{ color: '#1e1b17', fontFamily: 'var(--font-be-vietnam)' }}
-        >
-          {article.title}
-        </h1>
+          {/* H1 — Plus Jakarta Sans, large */}
+          <h1
+            className="text-3xl font-bold leading-tight mb-4"
+            style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
+          >
+            {article.title}
+          </h1>
 
-        {/* Article HTML body — from remark/rehype pipeline, trusted server-side content */}
-        {/* prose-lg: larger base font for comfortable reading on article pages            */}
-        {/* max-w-3xl: constrain line length on desktop for optimal readability            */}
-        {/* H2/H3 sizes set explicitly via Tailwind Typography prose-headings utilities    */}
+          {/* Description — subtitle, muted brown */}
+          <p
+            className="text-base leading-relaxed mb-5"
+            style={{ color: '#544435', fontFamily: 'var(--font-be-vietnam)' }}
+          >
+            {article.description}
+          </p>
+
+          {/* Meta row — date · reading time · reviewed_by */}
+          <div
+            className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm"
+            style={{ color: '#b0956b', fontFamily: 'var(--font-be-vietnam)' }}
+          >
+            <time dateTime={article.date}>
+              {new Date(article.date + 'T00:00:00').toLocaleDateString('fr-FR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            {article.lastUpdated && article.lastUpdated !== article.date && (
+              <>
+                <span aria-hidden>·</span>
+                <span>
+                  Mis à jour le{' '}
+                  <time dateTime={article.lastUpdated}>
+                    {new Date(article.lastUpdated + 'T00:00:00').toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                </span>
+              </>
+            )}
+            <span aria-hidden>·</span>
+            <span>{readingTime} min de lecture</span>
+            {article.author && (
+              <>
+                <span aria-hidden>·</span>
+                <a
+                  href="https://www.sio2renovations.com/about"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#b0956b', textDecoration: 'underline', textUnderlineOffset: 3 }}
+                >
+                  {article.author}
+                </a>
+              </>
+            )}
+          </div>
+        </header>
+
+        {/* ── Cover image — 16/9, rounded, full width ── */}
+        {article.cover && (
+          <div
+            className="relative w-full overflow-hidden rounded-2xl mb-10"
+            style={{ aspectRatio: '16/9' }}
+          >
+            <Image
+              src={article.cover}
+              alt={article.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
+
+        {/* ── Article body — prose without FAQ section ── */}
         <div
-          className="prose prose-lg max-w-3xl mb-10
-            prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4
-            prose-h3:text-lg prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3
-            prose-p:mb-5"
-          style={{
-            color: '#544435',
-            lineHeight: 1.85,
-            fontFamily: 'var(--font-be-vietnam)',
-          }}
-          dangerouslySetInnerHTML={{ __html: article.html }}
+          className="prose prose-lg max-w-none mb-10"
+          style={{ fontFamily: 'var(--font-be-vietnam)' }}
+          dangerouslySetInnerHTML={{ __html: body }}
         />
+
+        {/* ── FAQ accordions — même style que la page /faq ── */}
+        {faqItems && (
+          <section className="mb-10">
+            <h2
+              className="text-xl font-bold mb-5"
+              style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
+            >
+              Questions fréquentes
+            </h2>
+            <div className="flex flex-col gap-3">
+              {faqItems.map((item, i) => (
+                <details
+                  key={i}
+                  className="group rounded-xl overflow-hidden"
+                  style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.4)', boxShadow: '0 2px 8px rgba(30,27,23,0.04)' }}
+                >
+                  <summary
+                    className="cursor-pointer px-6 py-5 font-medium list-none flex items-center justify-between gap-4 hover:bg-[#f0e8dc] transition-colors"
+                    style={{ color: '#1e1b17', fontFamily: 'var(--font-be-vietnam)', fontSize: 15 }}
+                  >
+                    {item.question}
+                    <span
+                      className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-lg font-light transition-transform group-open:rotate-45"
+                      style={{ background: 'rgba(243,146,32,0.15)', color: '#f39220' }}
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <div style={{ borderTop: '1px solid rgba(218,194,175,0.4)' }}>
+                    <div
+                      className="px-6 py-5 prose prose-base max-w-none"
+                      style={{ color: '#544435', lineHeight: 1.75, fontFamily: 'var(--font-be-vietnam)' }}
+                      dangerouslySetInnerHTML={{ __html: item.answerHtml }}
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
       </article>
 
       {/* CTA section — cream glassmorphic card with three contact options */}
