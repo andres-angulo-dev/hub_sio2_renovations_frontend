@@ -110,12 +110,14 @@ export default async function FaqPage() {
       {/* Category sections — one section per category, questions as accordions */}
       {Object.entries(grouped).map(([category, categoryQuestions]) => (
         <section key={category} className="mb-10">
-          {/* Category header — orange accent matches brand design tokens */}
-          <h2
-            className="text-lg font-semibold mb-4"
-            style={{ color: '#f39220', fontFamily: 'var(--font-be-vietnam)' }}
-          >
-            {category}
+          {/* Category header — pill style */}
+          <h2 className="mb-5">
+            <span
+              className="inline-block text-sm font-semibold tracking-wide uppercase px-4 py-1.5 rounded-full"
+              style={{ background: 'rgba(243,146,32,0.1)', color: '#f39220', fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              {category}
+            </span>
           </h2>
 
           {/* Accordion list for this category */}
@@ -123,30 +125,35 @@ export default async function FaqPage() {
             {categoryQuestions.map((q) => (
               <details
                 key={q.slug}
-                className="group border border-[#f9f3eb] rounded-lg"
+                className="group rounded-xl overflow-hidden"
+                style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.4)', boxShadow: '0 2px 8px rgba(30,27,23,0.04)' }}
               >
                 {/* Question row — acts as the toggle trigger */}
                 <summary
-                  className="cursor-pointer px-5 py-4 font-medium text-sm list-none flex items-center justify-between"
-                  style={{ color: '#544435', fontFamily: 'var(--font-be-vietnam)' }}
+                  className="cursor-pointer px-6 py-5 font-medium list-none flex items-center justify-between gap-4 hover:bg-[#f0e8dc] transition-colors"
+                  style={{ color: '#1e1b17', fontFamily: 'var(--font-be-vietnam)', fontSize: 15 }}
                 >
                   {q.question}
-                  {/* Chevron rotates 180deg when details is open via group-open: variant */}
-                  <span className="ml-2 text-[#b0956b] group-open:rotate-180 transition-transform">
-                    &#9662;
+                  <span
+                    className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-lg font-light transition-transform group-open:rotate-45"
+                    style={{ background: 'rgba(243,146,32,0.15)', color: '#f39220' }}
+                  >
+                    +
                   </span>
                 </summary>
 
                 {/* Answer — rendered HTML from markdown pipeline, injected safely (git-committed content) */}
+                <div style={{ borderTop: '1px solid rgba(218,194,175,0.4)' }}>
                 <div
-                  className="px-5 pb-4 text-sm prose prose-sm max-w-none"
+                  className="px-6 py-5 prose prose-base max-w-none"
                   style={{
                     color: '#544435',
-                    lineHeight: 1.65,
+                    lineHeight: 1.75,
                     fontFamily: 'var(--font-be-vietnam)',
                   }}
                   dangerouslySetInnerHTML={{ __html: q.html }}
                 />
+                </div>
               </details>
             ))}
           </div>

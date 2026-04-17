@@ -46,8 +46,9 @@ export default function ContentLayout({
           <Image
             src="/black_logo.svg"
             alt="SiO2 Renovations"
-            width={40}
-            height={40}
+            width={56}
+            height={56}
+            className="w-10 h-10 md:w-14 md:h-14"
           />
         </Link>
 
@@ -63,7 +64,7 @@ export default function ContentLayout({
       </header>
 
       {/* Main content area — centered, readable width, comfortable vertical padding */}
-      <main className="max-w-2xl mx-auto px-6 py-10">
+      <main className="max-w-3xl mx-auto px-6 md:px-10 py-10 md:py-14">
         {children}
       </main>
     </div>

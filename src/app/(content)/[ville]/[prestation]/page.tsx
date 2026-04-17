@@ -199,8 +199,8 @@ export default async function LocalServicePage({
       <article>
         {/* Page title — matches frontmatter title field */}
         <h1
-          className="text-2xl font-bold mb-6"
-          style={{ color: '#1e1b17', fontFamily: 'var(--font-be-vietnam)' }}
+          className="text-3xl md:text-4xl font-bold mb-8 leading-tight"
+          style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
         >
           {page.title}
         </h1>
@@ -208,10 +208,10 @@ export default async function LocalServicePage({
         {/* Rendered markdown body — Tailwind Typography prose for readable hierarchy */}
         {/* Content is git-committed markdown reviewed before commit — not user input */}
         <div
-          className="prose prose-sm max-w-none mb-10"
+          className="prose prose-lg max-w-none mb-10"
           style={{
             color: '#544435',
-            lineHeight: 1.75,
+            lineHeight: 1.85,
             fontFamily: 'var(--font-be-vietnam)',
           }}
           dangerouslySetInnerHTML={{ __html: page.html }}

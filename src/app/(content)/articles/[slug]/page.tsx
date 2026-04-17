@@ -86,7 +86,8 @@ export async function generateMetadata({
  * Renders:
  *   1. Two JSON-LD script tags: Article schema + BreadcrumbList schema
  *   2. Article header: formatted date + h1 title
- *   3. Article body: HTML from remark/rehype pipeline
+ *   3. Article body: HTML from remark/rehype pipeline (prose-lg, max-w-3xl)
+ *   4. CTA section: cream glassmorphic card with devis / phone / email buttons
  */
 export default async function ArticlePage({
   params,
@@ -190,16 +191,102 @@ export default async function ArticlePage({
         </h1>
 
         {/* Article HTML body — from remark/rehype pipeline, trusted server-side content */}
+        {/* prose-lg: larger base font for comfortable reading on article pages            */}
+        {/* max-w-3xl: constrain line length on desktop for optimal readability            */}
+        {/* H2/H3 sizes set explicitly via Tailwind Typography prose-headings utilities    */}
         <div
-          className="prose prose-sm max-w-none"
+          className="prose prose-lg max-w-3xl mb-10
+            prose-h2:text-xl prose-h2:font-semibold prose-h2:mt-8 prose-h2:mb-4
+            prose-h3:text-lg prose-h3:font-medium prose-h3:mt-6 prose-h3:mb-3
+            prose-p:mb-5"
           style={{
             color: '#544435',
-            lineHeight: 1.75,
+            lineHeight: 1.85,
             fontFamily: 'var(--font-be-vietnam)',
           }}
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
       </article>
+
+      {/* CTA section — cream glassmorphic card with three contact options */}
+      {/* Identical structure to the CTA block in [ville]/[prestation]/page.tsx */}
+      <section
+        className="rounded-xl p-6 flex flex-col items-center gap-6"
+        style={{
+          background: '#f9f3eb',
+          boxShadow: '0 35px 70px -5px rgba(30,27,23,0.06)',
+        }}
+      >
+        {/* Lead text */}
+        <p
+          className="text-center font-medium"
+          style={{ fontFamily: 'var(--font-be-vietnam)', color: '#544435', fontSize: 15 }}
+        >
+          Besoin d&apos;un devis pour votre projet ?
+        </p>
+
+        {/* Primary CTA — links to main sio2renovations.com site */}
+        <a
+          href="https://www.sio2renovations.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            borderRadius: 9999,
+            border: '1px solid #f39220',
+            background: 'rgba(255,255,255,0.5)',
+            padding: '10px 20px',
+            color: '#1e1b17',
+            fontSize: 14,
+            fontWeight: 500,
+            textDecoration: 'none',
+          }}
+        >
+          Demander un devis
+        </a>
+
+        {/* Secondary CTAs — phone and email in a 2-column grid */}
+        <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
+          {/* Phone CTA */}
+          <a
+            href="tel:0756888701"
+            className="rounded-lg p-4 flex flex-col items-center gap-1 transition-all hover:scale-105"
+            style={{
+              background: 'rgba(255,255,255,0.5)',
+              color: '#1e1b17',
+              textDecoration: 'none',
+            }}
+          >
+            {/* Phone icon — Unicode telephone symbol, orange accent */}
+            <span style={{ color: '#f39220', fontSize: 20 }}>&#9742;</span>
+            <span
+              className="text-xs font-medium"
+              style={{ fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              Appeler
+            </span>
+          </a>
+
+          {/* Email CTA */}
+          <a
+            href="mailto:contact@sio2renovations.com"
+            className="rounded-lg p-4 flex flex-col items-center gap-1 transition-all hover:scale-105"
+            style={{
+              background: 'rgba(255,255,255,0.5)',
+              color: '#1e1b17',
+              textDecoration: 'none',
+            }}
+          >
+            {/* Envelope icon — Unicode envelope symbol, orange accent */}
+            <span style={{ color: '#f39220', fontSize: 20 }}>&#9993;</span>
+            <span
+              className="text-xs font-medium"
+              style={{ fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              Email
+            </span>
+          </a>
+        </div>
+      </section>
     </>
   );
 }
