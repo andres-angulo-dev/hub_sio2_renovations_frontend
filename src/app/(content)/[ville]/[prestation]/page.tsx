@@ -236,7 +236,7 @@ export default async function LocalServicePage({
 
         {/* Primary CTA — links to main sio2renovations.com site */}
         <a
-          href="https://www.sio2renovations.com/"
+          href="https://www.sio2renovations.com/contact"
           target="_blank"
           rel="noopener noreferrer"
           style={{
