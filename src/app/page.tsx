@@ -1,8 +1,10 @@
 import Header from './components/Header';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faArrowUpRightFromSquare, faLocationDot, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faArrowUpRightFromSquare, faLocationDot, faGlobe, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { getAllArticles } from '@/lib/content';
 
 // Design tokens — palette SiO₂ Modern Atelier
 const t = {
@@ -19,7 +21,8 @@ const t = {
   shadow: '0 35px 70px -5px rgba(30,27,23,0.06)',
 };
 
-export default function Home() {
+export default async function Home() {
+  const latestArticles = (await getAllArticles()).slice(0, 2);
   return (
     <div className="min-h-screen flex justify-center px-4">
 
@@ -156,7 +159,58 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── 6. Section contact ── */}
+          {/* ── 6. Derniers articles ── */}
+          {latestArticles.length > 0 && (
+            <div className="flex flex-col gap-4">
+
+              <div className="flex items-center gap-3">
+                <div style={{ flex: 1, height: 1, background: 'rgba(243,146,32,0.15)' }} />
+                <span
+                  style={{ fontFamily: t.font, color: t.accent, fontSize: 10, letterSpacing: '0.2em' }}
+                  className="uppercase font-bold"
+                >
+                  Derniers Articles
+                </span>
+                <div style={{ flex: 1, height: 1, background: 'rgba(243,146,32,0.15)' }} />
+              </div>
+
+              <div className="flex flex-col gap-3">
+                {latestArticles.map(article => (
+                  <Link
+                    key={article.slug}
+                    href={`/articles/${article.slug}`}
+                    className="group rounded-xl p-4 flex flex-col gap-2 transition-all duration-200 hover:shadow-md"
+                    style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.3)' }}
+                  >
+                    <span style={{ fontFamily: t.font, color: t.muted, fontSize: 11 }}>
+                      {new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    </span>
+                    <span
+                      style={{ fontFamily: t.font, color: t.dark, fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}
+                      className="group-hover:text-[#f39220] transition-colors"
+                    >
+                      {article.title}
+                    </span>
+                    <span style={{ fontFamily: t.font, color: t.body, fontSize: 12, lineHeight: 1.55 }} className="line-clamp-2">
+                      {article.description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              <Link
+                href="/articles"
+                className="flex items-center gap-2 w-fit transition-colors"
+                style={{ fontFamily: t.font, color: t.muted, fontSize: 12 }}
+              >
+                <span className="hover:text-[#f39220]">Tous les articles</span>
+                <FontAwesomeIcon icon={faArrowRight} style={{ fontSize: 10 }} />
+              </Link>
+
+            </div>
+          )}
+
+          {/* ── 7. Section contact ── */}
           <div className="flex flex-col gap-4">
 
             {/* Séparateur "Contactez-nous" */}
@@ -220,7 +274,7 @@ export default function Home() {
 
         </div>
 
-        {/* ── 7. Footer ── */}
+        {/* ── 8. Footer ── */}
         <footer className="pb-8 pt-4">
           <p className="text-center" style={{ fontFamily: t.font, color: t.muted, fontSize: 11 }}>
             © 2026 | Tous droits réservés | Réalisé par{" "}
