@@ -26,7 +26,7 @@
 
 - **Primary:** Paris (all arrondissements)
 - **Region:** Île-de-France
-- **Cities served:** Paris, Boulogne-Billancourt, Neuilly-sur-Seine, Levallois-Perret, Saint-Cloud, Versailles, and surrounding municipalities
+- **Cities served:** Paris, Boulogne-Billancourt, Neuilly-sur-Seine, Levallois-Perret, Issy-les-Moulineaux, Courbevoie, Saint-Cloud, Montrouge, Vanves, Charenton-le-Pont, Vincennes, Saint-Mandé, Nogent-sur-Marne, Joinville-le-Pont, Montreuil, Saint-Ouen
 
 ## Locations
 
@@ -58,6 +58,34 @@
 - [Rénovation salle de bains à Paris](https://hub.sio2renovations.com/paris/renovation-salle-de-bains): Local service page for bathroom renovation in Paris
 - [Rénovation complète à Boulogne-Billancourt](https://hub.sio2renovations.com/boulogne-billancourt/renovation-complete): Local service page for full renovation in Boulogne-Billancourt
 - [Rénovation salle de bains à Boulogne-Billancourt](https://hub.sio2renovations.com/boulogne-billancourt/renovation-salle-de-bains): Local service page for bathroom renovation in Boulogne-Billancourt
+- [Rénovation complète à Neuilly-sur-Seine](https://hub.sio2renovations.com/neuilly-sur-seine/renovation-complete): Haussmannian and art deco buildings, premium finishes
+- [Rénovation salle de bains à Neuilly-sur-Seine](https://hub.sio2renovations.com/neuilly-sur-seine/renovation-salle-de-bains): Lead pipes, structural constraints, premium materials
+- [Rénovation complète à Levallois-Perret](https://hub.sio2renovations.com/levallois-perret/renovation-complete): Dense 1960-80s buildings, investor renovations, access constraints
+- [Rénovation salle de bains à Levallois-Perret](https://hub.sio2renovations.com/levallois-perret/renovation-salle-de-bains): Small surfaces, durability for landlords, co-ownership protocols
+- [Rénovation complète à Issy-les-Moulineaux](https://hub.sio2renovations.com/issy-les-moulineaux/renovation-complete): Tech hub, expat clientele, 70s-80s buildings and recent programs
+- [Rénovation salle de bains à Issy-les-Moulineaux](https://hub.sio2renovations.com/issy-les-moulineaux/renovation-salle-de-bains): Waterproofing, ventilation, corporate tenant standards
+- [Rénovation complète à Courbevoie](https://hub.sio2renovations.com/courbevoie/renovation-complete): Bécon/La Défense duality, underground access constraints
+- [Rénovation salle de bains à Courbevoie](https://hub.sio2renovations.com/courbevoie/renovation-salle-de-bains): Shared risers in towers, timber floors in Bécon
+- [Rénovation complète à Saint-Cloud](https://hub.sio2renovations.com/saint-cloud/renovation-complete): Premium villas and bourgeois apartments, strict PLU
+- [Rénovation salle de bains à Saint-Cloud](https://hub.sio2renovations.com/saint-cloud/renovation-salle-de-bains): Timber floor diagnosis, premium materials, heritage elements
+- [Rénovation complète à Montrouge](https://hub.sio2renovations.com/montrouge/renovation-complete): Buy-renovate-rent market, tight timelines
+- [Rénovation salle de bains à Montrouge](https://hub.sio2renovations.com/montrouge/renovation-salle-de-bains): Small 3-5m² surfaces, walk-in shower optimization
+- [Rénovation complète à Vanves](https://hub.sio2renovations.com/vanves/renovation-complete): Long-term owner-occupiers, well-managed co-ownerships
+- [Rénovation salle de bains à Vanves](https://hub.sio2renovations.com/vanves/renovation-salle-de-bains): Durable materials, family vs rental logic
+- [Rénovation complète à Charenton-le-Pont](https://hub.sio2renovations.com/charenton-le-pont/renovation-complete): Haussmannian/1930s mix, riverside standing, Val-de-Marne PLU
+- [Rénovation salle de bains à Charenton-le-Pont](https://hub.sio2renovations.com/charenton-le-pont/renovation-salle-de-bains): Period-specific networks, riverside standing expectations
+- [Rénovation complète à Vincennes](https://hub.sio2renovations.com/vincennes/renovation-complete): ABF perimeter (château), bourgeois 1900-1940 buildings
+- [Rénovation salle de bains à Vincennes](https://hub.sio2renovations.com/vincennes/renovation-salle-de-bains): Lead pipes, original parquet adjacent, premium materials
+- [Rénovation complète à Saint-Mandé](https://hub.sio2renovations.com/saint-mande/renovation-complete): Ultra-premium 0.7km² commune, strict co-ownership rules
+- [Rénovation salle de bains à Saint-Mandé](https://hub.sio2renovations.com/saint-mande/renovation-salle-de-bains): Mandatory acoustic insulation, art deco atypical configurations
+- [Rénovation complète à Nogent-sur-Marne](https://hub.sio2renovations.com/nogent-sur-marne/renovation-complete): 1900-1930 townhouses, Port district, heritage PLU protection
+- [Rénovation salle de bains à Nogent-sur-Marne](https://hub.sio2renovations.com/nogent-sur-marne/renovation-salle-de-bains): Timber joists, lead pipes, residual bathroom volumes
+- [Rénovation complète à Joinville-le-Pont](https://hub.sio2renovations.com/joinville-le-pont/renovation-complete): 1920-1950 houses with gardens, older stock than neighbors
+- [Rénovation salle de bains à Joinville-le-Pont](https://hub.sio2renovations.com/joinville-le-pont/renovation-salle-de-bains): Joists, lead, basement humidity, max 1-week without bathroom
+- [Rénovation complète à Montreuil](https://hub.sio2renovations.com/montreuil/renovation-complete): Loft conversions (Bas-Montreuil), workers' housing, 60-80s co-ownerships
+- [Rénovation salle de bains à Montreuil](https://hub.sio2renovations.com/montreuil/renovation-salle-de-bains): New networks in lofts, concrete slab constraints, polished concrete
+- [Rénovation complète à Saint-Ouen](https://hub.sio2renovations.com/saint-ouen/renovation-complete): Post-line-14/Olympics transformation, 4 building typologies
+- [Rénovation salle de bains à Saint-Ouen](https://hub.sio2renovations.com/saint-ouen/renovation-salle-de-bains): Slab drainage management, large loft shower areas
 
 ## Markdown Mirrors (Clean AI-Readable Versions)
 
