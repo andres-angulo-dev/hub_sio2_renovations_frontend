@@ -174,27 +174,22 @@ export default async function Home() {
                 <div style={{ flex: 1, height: 1, background: 'rgba(243,146,32,0.15)' }} />
               </div>
 
-              <div className="flex flex-col gap-3">
-                {latestArticles.map(article => (
-                  <Link
-                    key={article.slug}
-                    href={`/articles/${article.slug}`}
-                    className="group rounded-xl p-4 flex flex-col gap-2 transition-all duration-200 hover:shadow-md"
-                    style={{ background: '#f9f3eb', border: '1px solid rgba(218,194,175,0.3)' }}
-                  >
-                    <span style={{ fontFamily: t.font, color: t.muted, fontSize: 11 }}>
-                      {new Date(article.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
-                    </span>
-                    <span
-                      style={{ fontFamily: t.font, color: t.dark, fontSize: 14, fontWeight: 600, lineHeight: 1.4 }}
-                      className="group-hover:text-[#f39220] transition-colors"
+              <div className="flex flex-col">
+                {latestArticles.map((article, i) => (
+                  <div key={article.slug}>
+                    {i > 0 && <div style={{ height: 1, background: 'rgba(218,194,175,0.3)' }} />}
+                    <Link
+                      href={`/articles/${article.slug}`}
+                      className="group flex items-center py-3 px-2 -mx-2 rounded-md transition-all duration-200 hover:bg-black/[0.04]"
                     >
-                      {article.title}
-                    </span>
-                    <span style={{ fontFamily: t.font, color: t.body, fontSize: 12, lineHeight: 1.55 }} className="line-clamp-2">
-                      {article.description}
-                    </span>
-                  </Link>
+                      <span
+                        style={{ fontFamily: t.font, color: t.body, fontSize: 13, lineHeight: 1.45 }}
+                        className="group-hover:translate-x-1 transform transition-transform duration-200"
+                      >
+                        {article.title}
+                      </span>
+                    </Link>
+                  </div>
                 ))}
               </div>
 
