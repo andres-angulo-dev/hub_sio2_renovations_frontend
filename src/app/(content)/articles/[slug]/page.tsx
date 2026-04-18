@@ -145,9 +145,10 @@ export default async function ArticlePage({
     datePublished: article.date,
     dateModified: article.lastUpdated ?? article.date,
     author: {
-      '@type': 'Organization',
-      name: 'SiO2 Renovations',
-      url: 'https://www.sio2renovations.com',
+      '@type': 'Person',
+      name: article.author ?? 'SiO2 Renovations',
+      ...(article.authorTitle ? { jobTitle: article.authorTitle } : {}),
+      url: 'https://www.sio2renovations.com/about',
     },
     publisher: {
       '@type': 'Organization',
@@ -293,14 +294,19 @@ export default async function ArticlePage({
             {article.author && (
               <>
                 <span aria-hidden>·</span>
-                <a
-                  href="https://www.sio2renovations.com/about"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ color: '#b0956b', textDecoration: 'underline', textUnderlineOffset: 3 }}
-                >
-                  {article.author}
-                </a>
+                <span>
+                  <a
+                    href="https://www.sio2renovations.com/about"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: '#b0956b', textDecoration: 'underline', textUnderlineOffset: 3 }}
+                  >
+                    {article.author}
+                  </a>
+                  {article.authorTitle && (
+                    <span style={{ color: '#b0956b', opacity: 0.75 }}>{', '}{article.authorTitle}</span>
+                  )}
+                </span>
               </>
             )}
           </div>
@@ -328,6 +334,21 @@ export default async function ArticlePage({
           style={{ fontFamily: 'var(--font-be-vietnam)' }}
           dangerouslySetInnerHTML={{ __html: body }}
         />
+
+        {/* ── YouTube embed — rendered when youtubeId is set in frontmatter ── */}
+        {article.youtubeId && (
+          <div className="mb-10 overflow-hidden rounded-2xl" style={{ aspectRatio: '16/9' }}>
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${article.youtubeId}`}
+              title="Vidéo de rénovation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ border: 'none', display: 'block' }}
+            />
+          </div>
+        )}
 
         {/* ── FAQ accordions — même style que la page /faq ── */}
         {faqItems && (

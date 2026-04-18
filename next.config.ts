@@ -14,6 +14,7 @@ const securityHeaders = [
       "media-src 'self'",
       "font-src 'self' https://fonts.gstatic.com",
       "connect-src 'self'",
+      "frame-src https://www.youtube.com",
       "frame-ancestors 'none'",
     ].join("; "),
   },

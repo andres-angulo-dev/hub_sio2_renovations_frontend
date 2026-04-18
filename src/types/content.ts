@@ -22,6 +22,8 @@ export interface ArticleFrontMatter {
   tags?: string[];
   reviewed_by?: string;
   author?: string;
+  authorTitle?: string; // e.g. "Commercial en travaux de rénovation, SiO2 Rénovations"
+  youtubeId?: string;   // YouTube video ID to embed between article body and FAQ
   lastUpdated?: string; // ISO 8601 "YYYY-MM-DD" — used for freshness signals and dateModified schema
 }
 

@@ -8,7 +8,9 @@ published: true
 cover: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=630&fit=crop&q=80"
 tags: ["paris", "salle-de-bains", "renovation-complete"]
 reviewed_by: "SiO2 Rénovations"
-author: "Équipe SiO2 Rénovations"
+author: "Alexander Angulo Hernandez"
+authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
+youtubeId: "V9bhfbhXtM4"
 ---
 
 La salle de bains concentre à elle seule trois corps d'état — plomberie, électricité, carrelage — dans un espace souvent inférieur à 6 m². À Paris, s'y ajoutent les contraintes propres à la copropriété et, depuis septembre 2025, de nouvelles obligations électriques qui changent ce qu'un artisanat doit livrer. Ce guide chiffre les budgets réels, clarifie ce qui nécessite une autorisation et détaille ce qui change en 2026.

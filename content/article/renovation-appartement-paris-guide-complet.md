@@ -8,7 +8,8 @@ published: true
 cover: "/images/articles/renovation-appartement-paris.jpg"
 tags: ["paris", "appartement", "renovation-complete"]
 reviewed_by: "SiO2 Rénovations"
-author: "Équipe SiO2 Rénovations"
+author: "Alexander Angulo Hernandez"
+authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
 ---
 
 Rénover un appartement à Paris, c'est jongler avec au moins trois règles en même temps : le droit de la copropriété, le PLU de la Ville de Paris, et les contraintes physiques d'un immeuble souvent centenaire. Ignorer l'une d'elles peut bloquer un chantier — ou provoquer une remise en état forcée des années plus tard, au moment d'une revente. Ce guide détaille les points de blocage réels, pas les cas d'école.
