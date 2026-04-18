@@ -55,6 +55,9 @@
 - [Rénover une salle de bains à Paris 2026](https://hub.sio2renovations.com/articles/renovation-salle-de-bains-paris): Costs (1,000–3,000 €/m²), NF C 15-100 electrical standards, permits, financial aid (MaPrimeAdapt')
 - [FAQ — Questions fréquentes](https://hub.sio2renovations.com/faq): Answers to common renovation questions in Île-de-France
 - [Rénovation complète à Paris](https://hub.sio2renovations.com/paris/renovation-complete): Local service page for full renovation in Paris
+- [Rénovation salle de bains à Paris](https://hub.sio2renovations.com/paris/renovation-salle-de-bains): Local service page for bathroom renovation in Paris
+- [Rénovation complète à Boulogne-Billancourt](https://hub.sio2renovations.com/boulogne-billancourt/renovation-complete): Local service page for full renovation in Boulogne-Billancourt
+- [Rénovation salle de bains à Boulogne-Billancourt](https://hub.sio2renovations.com/boulogne-billancourt/renovation-salle-de-bains): Local service page for bathroom renovation in Boulogne-Billancourt
 
 ## Markdown Mirrors (Clean AI-Readable Versions)
 
