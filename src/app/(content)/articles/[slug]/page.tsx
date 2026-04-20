@@ -34,6 +34,24 @@ import { getAllArticles, getArticleBySlug } from '@/lib/content';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
+const ZONES_VILLES = [
+  { label: 'Boulogne-Billancourt', slug: 'boulogne-billancourt' },
+  { label: 'Neuilly-sur-Seine', slug: 'neuilly-sur-seine' },
+  { label: 'Levallois-Perret', slug: 'levallois-perret' },
+  { label: 'Issy-les-Moulineaux', slug: 'issy-les-moulineaux' },
+  { label: 'Courbevoie', slug: 'courbevoie' },
+  { label: 'Saint-Cloud', slug: 'saint-cloud' },
+  { label: 'Montrouge', slug: 'montrouge' },
+  { label: 'Vanves', slug: 'vanves' },
+  { label: 'Charenton-le-Pont', slug: 'charenton-le-pont' },
+  { label: 'Vincennes', slug: 'vincennes' },
+  { label: 'Saint-Mandé', slug: 'saint-mande' },
+  { label: 'Nogent-sur-Marne', slug: 'nogent-sur-marne' },
+  { label: 'Joinville-le-Pont', slug: 'joinville-le-pont' },
+  { label: 'Montreuil', slug: 'montreuil' },
+  { label: 'Saint-Ouen', slug: 'saint-ouen' },
+];
+
 // Strips HTML tags and estimates reading time at 200 wpm, minimum 1 minute.
 function estimateReadingTime(html: string): number {
   const text = html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -110,7 +128,7 @@ export async function generateMetadata({
       publishedTime: article.date,
       url: `https://hub.sio2renovations.com/articles/${slug}`,
       siteName: 'SiO2 Renovations Hub',
-      ...(article.cover ? { images: [{ url: article.cover }] } : {}),
+      ...(article.cover ? { images: [{ url: article.cover.startsWith('http') ? article.cover : `https://hub.sio2renovations.com${article.cover}` }] } : {}),
     },
   };
 }
@@ -388,6 +406,36 @@ export default async function ArticlePage({
                     />
                   </div>
                 </details>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── Zones d'intervention — rendered when zonesSlug is set in frontmatter ── */}
+        {article.zonesSlug && (
+          <section className="mb-10">
+            <h2
+              className="text-base font-semibold mb-3"
+              style={{ color: '#544435', fontFamily: 'var(--font-be-vietnam)' }}
+            >
+              Zones d&apos;intervention
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {ZONES_VILLES.map(({ label, slug }) => (
+                <a
+                  key={slug}
+                  href={`/${slug}/${article.zonesSlug}`}
+                  className="inline-block rounded-full px-3 py-1 text-xs font-medium transition-colors hover:bg-[#ffdcbf]"
+                  style={{
+                    background: '#fff3e0',
+                    color: '#8c4f00',
+                    border: '1px solid #ffdcbf',
+                    fontFamily: 'var(--font-be-vietnam)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {label}
+                </a>
               ))}
             </div>
           </section>

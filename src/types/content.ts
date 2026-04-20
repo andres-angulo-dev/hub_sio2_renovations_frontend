@@ -25,6 +25,7 @@ export interface ArticleFrontMatter {
   authorTitle?: string; // e.g. "Commercial en travaux de rénovation, SiO2 Rénovations"
   youtubeId?: string;   // YouTube video ID to embed between article body and FAQ
   lastUpdated?: string; // ISO 8601 "YYYY-MM-DD" — used for freshness signals and dateModified schema
+  zonesSlug?: string;   // prestation slug for zones d'intervention links (e.g. "renovation-complete")
 }
 
 // FAQ entry — single question/answer. FaqFrontMatter covers the document-level
