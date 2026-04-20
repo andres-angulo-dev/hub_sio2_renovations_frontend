@@ -39,7 +39,7 @@ Le délai minimum entre la convocation et la tenue d'une assemblée générale e
 
 La réponse dépend de ce que vous touchez. Une remise à neuf intérieure pure (peinture, sol, cuisine, salle de bains) ne nécessite aucune autorisation d'urbanisme. Dès qu'un élément visible depuis l'extérieur est modifié, les règles changent.
 
-![Dossier de déclaration préalable de travaux et documents d'urbanisme pour rénovation à Paris](https://images.unsplash.com/photo-1735795798441-89cb505e1970?w=800&h=500&fit=crop&q=80)
+![Dossier de déclaration préalable de travaux et documents d'urbanisme pour rénovation à Paris](/images/articles/appart-declaration-travaux.webp)
 
 La Ville de Paris distingue deux niveaux d'autorisation ([paris.fr, 2025](https://www.paris.fr/pages/permis-de-construire-declaration-de-travaux-40)) :
 
@@ -62,7 +62,7 @@ Attention aux périmètres protégés. Le Marais, l'île Saint-Louis et le 7e ar
 
 Il n'existe pas de barème officiel FFB ou CAPEB par type de rénovation. Les fourchettes ci-dessous reflètent les pratiques du secteur sur des logements en état standard, hors structures dégradées. Prenez-les comme des ordres de grandeur, pas des devis.
 
-![Chantier de rénovation appartement Paris haussmannien — travaux intérieurs en cours](https://images.unsplash.com/photo-1505409628601-edc9af17fda6?w=800&h=500&fit=crop&q=80)
+![Chantier de rénovation appartement Paris haussmannien — travaux intérieurs en cours](/images/articles/appart-chantier-haussmann.webp)
 
 | Type | Contenu des travaux | Fourchette indicative |
 |---|---|---|
@@ -114,7 +114,7 @@ Un point à ne pas négliger : pour bénéficier de la plupart de ces aides, les
 
 Une fois le chantier terminé, la réception des travaux — moment où vous signez le procès-verbal avec l'entreprise — déclenche trois régimes de garantie prévus par le Code civil. Les connaître avant de signer vous évite de nombreux conflits.
 
-![Artisan en train de peindre des murs lors d'une rénovation intérieure d'appartement](https://images.unsplash.com/photo-1622890950118-68ee5a9ab1a8?w=800&h=500&fit=crop&q=80)
+![Artisan en train de peindre des murs lors d'une rénovation intérieure d'appartement](/images/articles/appart-peinture.webp)
 
 **La garantie de parfait achèvement** couvre la première année suivant la réception. Elle oblige l'entreprise à reprendre tous les désordres que vous signalez, qu'il s'agisse d'une plinthe mal posée, d'un robinet qui goutte ou d'une peinture qui cloque. La procédure est simple : envoyez un courrier recommandé décrivant les défauts — l'entreprise doit intervenir dans un délai raisonnable. C'est la garantie la plus couramment utilisée, et la plus souvent ignorée par les propriétaires.
 

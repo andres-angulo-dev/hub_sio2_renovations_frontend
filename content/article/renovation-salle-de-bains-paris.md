@@ -5,7 +5,7 @@ date: "2026-04-17"
 lastUpdated: "2026-04-17"
 slug: "renovation-salle-de-bains-paris"
 published: true
-cover: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=630&fit=crop&q=80"
+cover: "/images/articles/sdb-cover.webp"
 tags: ["paris", "salle-de-bains", "renovation-complete"]
 reviewed_by: "SiO2 Rénovations"
 author: "Alexander Angulo Hernandez"
@@ -37,7 +37,7 @@ Commençons par poser les chiffres — parce que c'est souvent là que les surpr
 
 Deux facteurs font gonfler le budget parisien que personne ne chiffre dans les devis en ligne. D'abord l'accessibilité : monter une baignoire en fonte ou un receveur de douche dans un immeuble haussmannien au quatrième sans ascenseur, ça se négocie au cas par cas et ça s'ajoute à la facture. Ensuite la logistique de chantier : une salle d'eau de 4 m² dans un studio du 10e, c'est un autre monde qu'un espace de 8 m² dans un appartement familial du 16e — les intervenants se marchent dessus, les matériaux n'ont nulle part où stagner. Ces contraintes, on les retrouve à l'identique dans les communes voisines : [Neuilly-sur-Seine](/neuilly-sur-seine/renovation-salle-de-bains), [Boulogne-Billancourt](/boulogne-billancourt/renovation-salle-de-bains) et [Levallois-Perret](/levallois-perret/renovation-salle-de-bains) concentrent le même parc haussmannien et les mêmes surcoûts d'accès.
 
-![Salle de bains luxe avec baignoire îlot blanche et carrelage marbre gris](https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=1200&h=630&fit=crop&q=80)
+![Salle de bains luxe avec baignoire îlot blanche et carrelage marbre gris](/images/articles/sdb-baignoire-ilot.webp)
 
 Pour une transformation complète d'appartement intégrant la salle de bains, les fourchettes s'inscrivent dans un budget global — [notre guide sur la rénovation d'appartement à Paris](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet) détaille les coûts au m² tous corps d'état confondus.
 
@@ -57,7 +57,7 @@ Les périmètres protégés ajoutent encore une couche. Dans le Marais, l'île S
 
 ## Les normes électriques obligatoires en salle de bains
 
-![Chantier de rénovation de salle de bains avec matériaux et travaux en cours](https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&h=630&fit=crop&q=80)
+![Chantier de rénovation de salle de bains avec matériaux et travaux en cours](/images/articles/sdb-chantier.webp)
 
 Sur le terrain, c'est un point que les propriétaires découvrent souvent trop tard — parfois parce que l'artisan ne le mentionne pas dans son devis. La norme NF C 15-100 édition 2024 **a pris effet le 1er septembre 2025** ([GESEC, 2024](https://www.gesec.fr/nf-c15-100-les-nouveautes-de-ledition-2024-en-vigueur-a-partir-de-septembre-2025/)). Elle couvre tous les travaux électriques neufs et les rénovations électriques engagées après cette date.
 
@@ -94,15 +94,23 @@ Le budget net, une fois les aides déduites, peut changer radicalement la décis
 
 ## Les erreurs les plus coûteuses sur les chantiers parisiens
 
-Tout ça — budgets, normes, délais — ne sert à rien si les erreurs d'exécution effacent la marge de manœuvre. Et sur les chantiers parisiens, certaines reviennent avec une régularité décourageante. Ne pas inspecter les colonnes d'eau avant de démarrer — c'est la première erreur, et la plus chère. Dans un immeuble parisien ancien, les colonnes montantes vieillissent mal. Un plombier qui ouvre une paroi pour reposer les évacuations peut tomber sur de la fonte corrodée ou des joints secs : des travaux non prévus qui bloquent le chantier et alourdissent la facture d'un coup.
+Budgets, normes, délais — tout ça ne sert à rien si les erreurs d'exécution effacent la marge de manœuvre. Quatre erreurs reviennent avec une régularité décourageante sur les chantiers parisiens.
 
-Trois autres erreurs reviennent chantier après chantier :
+### Ne pas inspecter les colonnes d'eau avant de démarrer
 
-**Commander le carrelage trop tard.** Le grès cérame grand format, les carreaux de ciment artisanaux et les mosaïques sur mesure ont des délais de 8 à 14 semaines. Commander après le démarrage du chantier, c'est payer les professionnels à attendre — et retarder la fin de l'intervention d'autant.
+C'est la première erreur, et la plus chère. Dans un immeuble parisien ancien, les colonnes montantes vieillissent mal. Un plombier qui ouvre une paroi pour reposer les évacuations peut tomber sur de la fonte corrodée ou des joints secs : des travaux non prévus qui bloquent le chantier et alourdissent la facture d'un coup.
 
-**Sous-estimer les travaux d'étanchéité.** Un receveur de douche mal étanché dans un immeuble haussmannien provoque une infiltration chez le voisin du dessous dans les 18 mois. La remise en état forcée coûte toujours plus que l'étanchéité bien faite dès le départ — sans compter les relations de voisinage.
+### Commander le carrelage trop tard
 
-**Multiplier les artisans sans coordination.** Le plombier passe avant le carreleur, qui finit avant l'électricien. Sur 5 m², deux semaines de décalage entre corps d'état coûtent plus que la marge économisée en gérant soi-même. Pour une rénovation complète d'appartement, [confier la coordination à une entreprise générale](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet) élimine ce risque.
+Le grès cérame grand format, les carreaux de ciment artisanaux et les mosaïques sur mesure ont des délais de 8 à 14 semaines. Commander après le démarrage du chantier, c'est payer les professionnels à attendre — et retarder la fin de l'intervention d'autant.
+
+### Sous-estimer les travaux d'étanchéité
+
+Un receveur de douche mal étanché dans un immeuble haussmannien provoque une infiltration chez le voisin du dessous dans les 18 mois. La remise en état forcée coûte toujours plus que l'étanchéité bien faite dès le départ — sans compter les relations de voisinage.
+
+### Multiplier les artisans sans coordination
+
+Le plombier passe avant le carreleur, qui finit avant l'électricien. Sur 5 m², deux semaines de décalage entre corps d'état coûtent plus que la marge économisée en gérant soi-même. Pour une rénovation complète d'appartement, [confier la coordination à une entreprise générale](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet) élimine ce risque.
 
 ---
 
