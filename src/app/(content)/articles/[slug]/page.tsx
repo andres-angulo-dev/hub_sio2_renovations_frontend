@@ -159,7 +159,7 @@ export default async function ArticlePage({
   // -- JSON-LD: Article schema ------------------------------------------
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: article.title,
     description: article.description,
     datePublished: article.date,
