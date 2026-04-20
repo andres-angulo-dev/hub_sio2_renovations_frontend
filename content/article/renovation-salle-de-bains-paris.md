@@ -103,6 +103,8 @@ Trois autres erreurs reviennent systématiquement :
 
 **Multiplier les artisans sans coordination.** Le plombier passe avant le carreleur, qui finit avant l'électricien. Sur 5 m², deux semaines de décalage entre corps d'état coûtent plus que la marge économisée en gérant soi-même. Pour une rénovation complète d'appartement, [confier la coordination à une entreprise générale](https://hub.sio2renovations.com/articles/renovation-appartement-paris-guide-complet) élimine ce risque.
 
+*SiO2 Rénovations intervient à Paris et dans les communes limitrophes : [Boulogne-Billancourt](/boulogne-billancourt/renovation-salle-de-bains), [Neuilly-sur-Seine](/neuilly-sur-seine/renovation-salle-de-bains), [Levallois-Perret](/levallois-perret/renovation-salle-de-bains), [Issy-les-Moulineaux](/issy-les-moulineaux/renovation-salle-de-bains), [Courbevoie](/courbevoie/renovation-salle-de-bains), [Saint-Cloud](/saint-cloud/renovation-salle-de-bains), [Montrouge](/montrouge/renovation-salle-de-bains), [Vanves](/vanves/renovation-salle-de-bains), [Charenton-le-Pont](/charenton-le-pont/renovation-salle-de-bains), [Vincennes](/vincennes/renovation-salle-de-bains), [Saint-Mandé](/saint-mande/renovation-salle-de-bains), [Nogent-sur-Marne](/nogent-sur-marne/renovation-salle-de-bains), [Joinville-le-Pont](/joinville-le-pont/renovation-salle-de-bains), [Montreuil](/montreuil/renovation-salle-de-bains), [Saint-Ouen](/saint-ouen/renovation-salle-de-bains) et dans toute l'Île-de-France.*
+
 ---
 
 ## Questions fréquentes
@@ -126,3 +128,4 @@ L'édition 2024, obligatoire depuis septembre 2025, renforce les exigences sur l
 ### Quelle aide pour adapter une salle de bains à une personne âgée ou handicapée ?
 
 MaPrimeAdapt' prend en charge **50 à 70 %** du coût des travaux d'adaptation pour les ménages modestes et intermédiaires : douche de plain-pied, barre d'appui, WC surélevé, porte élargie ([ANAH, 2026](https://www.anah.gouv.fr/anatheque/le-guide-des-aides-financieres-2026)). Le dossier se dépose sur le portail ANAH — comptez 2 à 3 mois d'instruction, donc planifiez avant de démarrer les travaux.
+

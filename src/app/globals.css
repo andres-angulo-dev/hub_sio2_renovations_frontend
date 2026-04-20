@@ -54,3 +54,9 @@ video { animation: fadeIn 1.5s ease-out forwards; }
   --tw-prose-th-borders: #dac2af;
   --tw-prose-td-borders: #dac2af;
 }
+
+.prose blockquote,
+.prose blockquote p,
+.prose blockquote li {
+  font-style: normal !important;
+}

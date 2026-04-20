@@ -31,6 +31,8 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { getAllArticles, getArticleBySlug } from '@/lib/content';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // Strips HTML tags and estimates reading time at 200 wpm, minimum 1 minute.
 function estimateReadingTime(html: string): number {
@@ -248,7 +250,7 @@ export default async function ArticlePage({
 
           {/* H1 — Plus Jakarta Sans, large */}
           <h1
-            className="text-3xl font-bold leading-tight mb-4"
+            className="text-2xl md:text-3xl font-bold leading-tight mb-4"
             style={{ color: '#1e1b17', fontFamily: 'var(--font-plus-jakarta)' }}
           >
             {article.title}
@@ -330,7 +332,7 @@ export default async function ArticlePage({
 
         {/* ── Article body — prose without FAQ section ── */}
         <div
-          className="prose prose-lg max-w-none mb-10"
+          className="prose md:prose-lg max-w-none mb-10"
           style={{ fontFamily: 'var(--font-be-vietnam)' }}
           dangerouslySetInnerHTML={{ __html: body }}
         />
@@ -433,17 +435,17 @@ export default async function ArticlePage({
           {/* Phone CTA */}
           <a
             href="tel:0756888701"
-            className="rounded-lg p-4 flex flex-col items-center gap-1 transition-all hover:scale-105"
+            className="flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-200 hover:bg-[#ffdcbf] hover:scale-105 hover:shadow-md"
             style={{
               background: 'rgba(255,255,255,0.5)',
               color: '#1e1b17',
               textDecoration: 'none',
             }}
           >
-            {/* Phone icon — Unicode telephone symbol, orange accent */}
-            <span style={{ color: '#f39220', fontSize: 20 }}>&#9742;</span>
+            {/* Phone icon — Font Awesome faPhone, orange accent */}
+            <FontAwesomeIcon icon={faPhone} style={{ color: '#f39220', fontSize: 22, marginBottom: 8 }} />
             <span
-              className="text-xs font-medium"
+              className="text-xs font-bold"
               style={{ fontFamily: 'var(--font-be-vietnam)' }}
             >
               Appeler
@@ -453,17 +455,17 @@ export default async function ArticlePage({
           {/* Email CTA */}
           <a
             href="mailto:contact@sio2renovations.com"
-            className="rounded-lg p-4 flex flex-col items-center gap-1 transition-all hover:scale-105"
+            className="flex flex-col items-center justify-center p-4 rounded-lg transition-all duration-200 hover:bg-[#ffdcbf] hover:scale-105 hover:shadow-md"
             style={{
               background: 'rgba(255,255,255,0.5)',
               color: '#1e1b17',
               textDecoration: 'none',
             }}
           >
-            {/* Envelope icon — Unicode envelope symbol, orange accent */}
-            <span style={{ color: '#f39220', fontSize: 20 }}>&#9993;</span>
+            {/* Envelope icon — Font Awesome faEnvelope, orange accent */}
+            <FontAwesomeIcon icon={faEnvelope} style={{ color: '#f39220', fontSize: 22, marginBottom: 8 }} />
             <span
-              className="text-xs font-medium"
+              className="text-xs font-bold"
               style={{ fontFamily: 'var(--font-be-vietnam)' }}
             >
               Email

@@ -95,6 +95,8 @@ Une entreprise générale porte la responsabilité du planning global, dispose d
 
 Dans notre expérience sur les chantiers parisiens, ce surcoût est amorti en moins de six mois sur un chantier de rénovation complète — simplement par l'absence de temps mort entre les corps d'état et la réduction des malfaçons liées à une mauvaise interface entre artisans.
 
+*SiO2 Rénovations intervient à Paris, dans les communes limitrophes : [Boulogne-Billancourt](/boulogne-billancourt/renovation-complete), [Neuilly-sur-Seine](/neuilly-sur-seine/renovation-complete), [Levallois-Perret](/levallois-perret/renovation-complete), [Issy-les-Moulineaux](/issy-les-moulineaux/renovation-complete), [Courbevoie](/courbevoie/renovation-complete), [Saint-Cloud](/saint-cloud/renovation-complete), [Montrouge](/montrouge/renovation-complete), [Vanves](/vanves/renovation-complete), [Charenton-le-Pont](/charenton-le-pont/renovation-complete), [Vincennes](/vincennes/renovation-complete), [Saint-Mandé](/saint-mande/renovation-complete), [Nogent-sur-Marne](/nogent-sur-marne/renovation-complete), [Joinville-le-Pont](/joinville-le-pont/renovation-complete), [Montreuil](/montreuil/renovation-complete), [Saint-Ouen](/saint-ouen/renovation-complete) et dans toute l'Île-de-France.*
+
 ---
 
 ## Questions fréquentes
@@ -118,3 +120,4 @@ Pour un appartement de 60 à 80 m², comptez 10 à 16 semaines de travaux effect
 ### Quelle est la différence entre déclaration préalable et permis de construire ?
 
 La déclaration préalable couvre les modifications mineures de l'aspect extérieur et les créations de surface inférieures à 20 m². Le permis de construire s'applique aux créations supérieures à 20 m², aux changements de destination avec modification de façade, et aux travaux sur monuments classés. À Paris, la déclaration préalable s'instruit en 1 à 2 mois, le permis en 4 mois ([service-public.fr](https://www.service-public.gouv.fr/particuliers/vosdroits/F17578)).
+
