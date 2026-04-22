@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import { NavigationTracker } from "@/components/NavigationTracker";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam",
@@ -79,8 +78,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${beVietnamPro.variable} antialiased`}>
-        <NavigationTracker />
-        {/* Dark overlay on top of the video for readability */}
+{/* Dark overlay on top of the video for readability */}
         <div className="fixed inset-0 bg-black/50 -z-5" />
 
         {/* Looping background video */}
