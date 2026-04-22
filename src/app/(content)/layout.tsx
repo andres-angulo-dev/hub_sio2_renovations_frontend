@@ -17,6 +17,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { RefTracker } from '@/components/RefTracker';
+import { BackButton } from '@/components/BackButton';
 
 /**
  * ContentLayout — shared shell for all (content) route group pages.
@@ -52,15 +54,9 @@ export default function ContentLayout({
           />
         </Link>
 
-        {/* Right: text navigation link back to hub home */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 hover:opacity-70 transition-opacity"
-          style={{ color: '#544435', fontSize: 14 }}
-        >
-          {/* Left arrow entity ← followed by label */}
-          &larr; Retour
-        </Link>
+        {/* Right: dynamic back button — sio2renovations.com if user came from there, hub home otherwise */}
+        <RefTracker />
+        <BackButton />
       </header>
 
       {/* Main content area — centered, readable width, comfortable vertical padding */}
