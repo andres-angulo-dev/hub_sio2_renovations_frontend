@@ -4,16 +4,19 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 export function BackButton() {
-  const [fromSio2, setFromSio2] = useState(false);
+  const [returnUrl, setReturnUrl] = useState<string | null>(null);
 
   useEffect(() => {
-    setFromSio2(sessionStorage.getItem('ref_source') === 'sio2renovations');
+    if (sessionStorage.getItem('ref_source') === 'sio2renovations') {
+      const stored = sessionStorage.getItem('ref_return_url');
+      setReturnUrl(stored ?? 'https://www.sio2renovations.com/?scroll=ressources');
+    }
   }, []);
 
-  if (fromSio2) {
+  if (returnUrl) {
     return (
       <a
-        href="https://www.sio2renovations.com/?scroll=ressources"
+        href={returnUrl}
         className="flex items-center gap-2 hover:opacity-70 transition-opacity"
         style={{ color: '#544435', fontSize: 14 }}
       >
