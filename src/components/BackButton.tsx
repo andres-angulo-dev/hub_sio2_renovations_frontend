@@ -9,16 +9,11 @@ export function BackButton() {
   const [action, setAction] = useState<BackAction | null>(null);
 
   useEffect(() => {
-    const referrer = document.referrer;
-
-    // Within-hub navigation — previous page was on the same domain
-    try {
-      if (referrer && new URL(referrer).host === window.location.host) {
-        setAction({ type: 'history' });
-        return;
-      }
-    } catch {
-      // invalid referrer — fall through
+    // Within-hub navigation — NavigationTracker stored the previous path
+    const previousPath = sessionStorage.getItem('hub_previous_path');
+    if (previousPath) {
+      setAction({ type: 'history' });
+      return;
     }
 
     // Came from SiO2 — use the stored return URL with scroll
