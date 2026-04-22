@@ -41,6 +41,7 @@ yarn-error.log*
 next-env.d.ts
 
 # Claude & AI workflow
+.claude/
 .planning/
 .gstack/
 CLAUDE.md
