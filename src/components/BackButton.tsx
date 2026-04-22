@@ -3,35 +3,51 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+type BackAction = { type: 'history' } | { type: 'url'; href: string };
+
 export function BackButton() {
-  const [returnUrl, setReturnUrl] = useState<string | null>(null);
+  const [action, setAction] = useState<BackAction | null>(null);
 
   useEffect(() => {
+    const referrer = document.referrer;
+
+    // Within-hub navigation — previous page was on the same domain
+    try {
+      if (referrer && new URL(referrer).host === window.location.host) {
+        setAction({ type: 'history' });
+        return;
+      }
+    } catch {
+      // invalid referrer — fall through
+    }
+
+    // Came from SiO2 — use the stored return URL with scroll
     if (sessionStorage.getItem('ref_source') === 'sio2renovations') {
       const stored = sessionStorage.getItem('ref_return_url');
-      setReturnUrl(stored ?? 'https://www.sio2renovations.com/?scroll=ressources');
+      setAction({ type: 'url', href: stored ?? 'https://www.sio2renovations.com/?scroll=ressources' });
+      return;
     }
+
+    // Default: back to hub home
+    setAction({ type: 'url', href: '/' });
   }, []);
 
-  if (returnUrl) {
+  const cls = 'flex items-center gap-2 hover:opacity-70 transition-opacity';
+  const style = { color: '#544435', fontSize: 14 };
+
+  if (!action) return null;
+
+  if (action.type === 'history') {
     return (
-      <a
-        href={returnUrl}
-        className="flex items-center gap-2 hover:opacity-70 transition-opacity"
-        style={{ color: '#544435', fontSize: 14 }}
-      >
+      <button onClick={() => window.history.back()} className={cls} style={style}>
         &larr; Retour
-      </a>
+      </button>
     );
   }
 
-  return (
-    <Link
-      href="/"
-      className="flex items-center gap-2 hover:opacity-70 transition-opacity"
-      style={{ color: '#544435', fontSize: 14 }}
-    >
-      &larr; Retour
-    </Link>
-  );
+  if (action.href === '/') {
+    return <Link href="/" className={cls} style={style}>&larr; Retour</Link>;
+  }
+
+  return <a href={action.href} className={cls} style={style}>&larr; Retour</a>;
 }
