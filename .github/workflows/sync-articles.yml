@@ -53,6 +53,13 @@ jobs:
         run: flutter pub get
         working-directory: frontend
 
+      - name: Create local.env
+        run: |
+          echo "GOOGLE_MAPS_API_KEY=${{ secrets.GOOGLE_MAPS_API_KEY }}" > local.env
+          echo "PARTNER_BACKEND_API_URL=${{ secrets.PARTNER_BACKEND_API_URL }}" >> local.env
+          echo "CUSTOMER_BACKEND_API_URL=${{ secrets.CUSTOMER_BACKEND_API_URL }}" >> local.env
+        working-directory: frontend
+
       - name: Build Flutter web
         run: |
           flutter clean
