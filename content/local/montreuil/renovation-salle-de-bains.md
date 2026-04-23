@@ -45,6 +45,8 @@ Les immeubles ouvriers montreuillois ont des caractéristiques communes : planch
 - Électricité de la pièce aux normes, VMC si pièce aveugle
 - Finitions complètes
 
+Si votre salle de bains s'inscrit dans un projet de conversion d'atelier, consultez notre [guide sur la rénovation de loft](/articles/renovation-loft-atelier) — les contraintes de création de réseaux et de dalle béton y sont traitées en détail.
+
 ## Demander un devis
 
 Nous nous déplaçons à Montreuil pour toute visite technique de salle de bains, sans engagement. Contactez-nous pour évaluer votre projet, qu'il s'agisse d'une rénovation dans un immeuble classique ou d'une création complète dans un loft.

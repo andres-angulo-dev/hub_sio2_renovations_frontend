@@ -51,6 +51,8 @@ Notre protocole :
 - Cuisine, salle de bains, second œuvre complet
 - Finitions : béton ciré, carrelage grand format, parquet, peinture
 
+Pour les projets de conversion d'ateliers ou de lofts industriels, notre [guide sur la rénovation de loft](/articles/renovation-loft-atelier) couvre les spécificités techniques : réseaux à créer de zéro, changement de destination, isolation des grands volumes.
+
 ## Demander un devis
 
 Nous nous déplaçons à Saint-Ouen pour toute visite technique, sans engagement. Contactez-nous pour évaluer votre projet et obtenir un devis complet adapté à la configuration de votre bien.

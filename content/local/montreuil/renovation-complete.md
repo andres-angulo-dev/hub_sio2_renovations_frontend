@@ -50,6 +50,8 @@ Notre protocole avant démarrage :
 - Béton ciré, carrelage grand format, parquet massif
 - Cuisine ouverte, salle de bains, second œuvre complet
 
+Pour les conversions d'ateliers, notre [guide complet sur la rénovation de loft](/articles/renovation-loft-atelier) détaille les contraintes spécifiques : changement de destination, création de réseaux de zéro, isolation des grands volumes.
+
 ## Demander un devis
 
 Nous intervenons à Montreuil pour tout projet de rénovation complète ou de conversion loft. Contactez-nous pour une visite technique gratuite : nous évaluons la faisabilité de votre projet et vous remettons un devis détaillé avant tout engagement.
