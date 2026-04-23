@@ -84,5 +84,6 @@ ${entries}
 
 fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
 fs.writeFileSync(OUTPUT_FILE, dart, 'utf8');
+fs.writeFileSync(path.join(__dirname, '../generated/latest_title.txt'), articles[0].title, 'utf8');
 
 console.log(`Generated ${articles.length} articles → ${OUTPUT_FILE}`);
