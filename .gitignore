@@ -40,6 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# generated build artifacts
+/generated/
+
 # Claude & AI workflow
 .claude/
 .planning/

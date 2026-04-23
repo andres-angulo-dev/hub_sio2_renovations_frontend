@@ -1,0 +1,71 @@
+name: Sync articles to Flutter frontend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/article/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout hub repo
+        uses: actions/checkout@v4
+        with:
+          path: hub
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: hub/package-lock.json
+
+      - name: Install hub dependencies
+        run: npm ci
+        working-directory: hub
+
+      - name: Generate articles_data.dart
+        run: node scripts/generate-articles-dart.js
+        working-directory: hub
+
+      - name: Checkout Flutter frontend repo
+        uses: actions/checkout@v4
+        with:
+          repository: andres-angulo-dev/sio2_renovations_frontend
+          token: ${{ secrets.FRONTEND_PAT }}
+          path: frontend
+
+      - name: Copy generated articles_data.dart
+        run: cp hub/generated/articles_data.dart frontend/lib/data/articles_data.dart
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install Flutter dependencies
+        run: flutter pub get
+        working-directory: frontend
+
+      - name: Build Flutter web
+        run: |
+          flutter clean
+          flutter build web --release
+          dart run bin/generate_sitemap.dart
+        working-directory: frontend
+
+      - name: Commit and push build to frontend repo
+        working-directory: frontend
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add lib/data/articles_data.dart
+          git add build/web/
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore(articles): sync articles + web build"
+          git push
