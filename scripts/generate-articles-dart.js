@@ -56,6 +56,20 @@ if (articles.length === 0) {
   process.exit(1);
 }
 
+// Validate required frontmatter fields before generating Dart.
+// Missing fields produce silent undefined values in Flutter — catch them here.
+const REQUIRED_FIELDS = ['title', 'description', 'cover', 'slug', 'date'];
+let validationFailed = false;
+articles.forEach((a, i) => {
+  REQUIRED_FIELDS.forEach(field => {
+    if (!a[field]) {
+      console.error(`Article #${i + 1} (slug: ${a.slug || 'unknown'}): missing required field "${field}"`);
+      validationFailed = true;
+    }
+  });
+});
+if (validationFailed) process.exit(1);
+
 // Generate Dart source
 const entries = articles.map(a => {
   const category    = dartEscape(categoryFromTags(a.tags));
