@@ -16,10 +16,10 @@
 //   Any route importing from '@/lib/content' MUST NOT set runtime = 'edge'.
 //
 // Security note (research/STACK.md):
-//   The HTML string produced by markdownToHtml is trusted because content origin
-//   is Claude API output reviewed manually before git commit — never user input.
-//   Consumers inject it into the DOM via server-rendered HTML only. Do NOT accept
-//   user-submitted markdown through this pipeline without first adding rehype-sanitize.
+//   rehype-sanitize is included in the pipeline and strips any XSS vectors produced
+//   by the remark/rehype transformation. Content origin is Claude API output reviewed
+//   manually before git commit — rehype-sanitize is a defence-in-depth layer that
+//   ensures safety even if the content origin assumption ever breaks.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,6 +28,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkRehype from 'remark-rehype';
+import rehypeSanitize from 'rehype-sanitize';
 import rehypeStringify from 'rehype-stringify';
 
 import type {
@@ -93,6 +94,7 @@ export function validateFrontMatter(
  *   remark-parse      -> markdown AST
  *   remark-gfm        -> GFM extensions (tables, footnotes, task lists)
  *   remark-rehype     -> convert markdown AST to HTML AST
+ *   rehype-sanitize   -> strip XSS vectors (defence-in-depth)
  *   rehype-stringify  -> serialise HTML AST to string
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
@@ -100,6 +102,7 @@ export async function markdownToHtml(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(markdown);
   return String(file);
@@ -120,16 +123,21 @@ function readMarkdownFiles(dir: string): string[] {
     .map((entry) => path.join(dir, entry.name));
 }
 
+// Guards against unbounded recursion if /content/local is symlinked or deeply nested.
+const DEFAULT_MAX_DEPTH = 3;
+
 /**
  * Recursively walks a directory and returns all .md files found.
  * Used for /content/local/ because pages are nested under /content/local/[ville]/[prestation].md.
+ * maxDepth prevents infinite recursion on symlinked or unexpectedly deep trees.
  */
-function walkMarkdownFiles(dir: string): string[] {
+function walkMarkdownFiles(dir: string, currentDepth = 0, maxDepth = DEFAULT_MAX_DEPTH): string[] {
   if (!fs.existsSync(dir)) return [];
+  if (currentDepth >= maxDepth) return [];
   const out: string[] = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...walkMarkdownFiles(full));
+    if (entry.isDirectory()) out.push(...walkMarkdownFiles(full, currentDepth + 1, maxDepth));
     else if (entry.isFile() && entry.name.endsWith('.md')) out.push(full);
   }
   return out;
