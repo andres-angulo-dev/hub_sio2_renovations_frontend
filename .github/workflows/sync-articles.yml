@@ -65,10 +65,9 @@ jobs:
         working-directory: frontend
 
       - name: Build Flutter web
-        run: |
-          flutter clean
-          flutter build web --release
-          dart run bin/generate_sitemap.dart
+        # Single source of truth: the frontend's own build.sh (clean + build +
+        # sitemap). Any step added there applies to CI automatically.
+        run: bash build.sh
         working-directory: frontend
 
       - name: Commit and push build to frontend repo
