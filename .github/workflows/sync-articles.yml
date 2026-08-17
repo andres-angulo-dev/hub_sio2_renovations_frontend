@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'content/article/**'
+      - '.github/workflows/sync-articles.yml'
   workflow_dispatch:
 
 jobs:
@@ -46,6 +47,9 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          # Pinned to the version the project is developed with — an unpinned
+          # 'stable' channel drifts over time and broke the build (Aug 2026).
+          flutter-version: '3.38.7'
           channel: 'stable'
           cache: true
 
