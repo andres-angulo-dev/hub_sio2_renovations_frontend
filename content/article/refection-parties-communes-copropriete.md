@@ -11,7 +11,7 @@ coverCredit: "Photo SiO2 Rénovations"
 canonical: "https://hub.sio2renovations.com/articles/refection-parties-communes-copropriete"
 tags: ["paris", "parties-communes", "copropriete", "saint-denis"]
 reviewed_by: "SiO2 Rénovations"
-author: "Alexander Angulo Hernandez"
+author: "Herney Angulo Osorio"
 authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
 zonesSlug: "renovation-complete"
 ---
