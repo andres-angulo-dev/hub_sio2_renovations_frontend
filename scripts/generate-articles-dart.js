@@ -17,6 +17,7 @@ const MAX_DESC_LENGTH = 90;
 // Derives the card category badge from the article's tags array.
 // Priority order: most specific first.
 function categoryFromTags(tags = []) {
+  if (tags.includes('parties-communes'))                 return 'IMMEUBLE PARTIES COMMUNES';
   if (tags.includes('loft') || tags.includes('atelier')) return 'LOFT & ATELIER';
   if (tags.includes('salle-de-bains'))                   return 'SALLE DE BAINS';
   if (tags.includes('cuisine'))                          return 'CUISINE';
