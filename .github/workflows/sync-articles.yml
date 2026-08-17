@@ -78,7 +78,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add lib/data/articles_data.dart
-          find build/web -type f | xargs git add -f
+          # Security: local.env (API key + backend URLs) must never be tracked —
+          # see frontend commit 255ff97. The bare `find | git add -f` used to
+          # re-add it; exclude it and untrack any copy left by earlier runs.
+          git rm --cached --ignore-unmatch --quiet build/web/assets/local.env || true
+          find build/web -type f ! -path 'build/web/assets/local.env' | xargs git add -f
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git commit -m "chore(articles): \"$LATEST_TITLE\" + web build"
           git push
