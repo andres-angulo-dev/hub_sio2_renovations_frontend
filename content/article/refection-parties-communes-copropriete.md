@@ -1,8 +1,8 @@
 ---
-title: "Réfection des parties communes en copropriété : prix, vote en AG et chantier (2026)"
-description: "Refaire une cage d'escalier coûte de 10 000 à 30 000 € selon les prestations. Majorités de vote, financement réel, étapes du chantier en immeuble occupé : le guide complet."
+title: "Réfection des parties communes en copropriété : prix, chantier et démarches (2026)"
+description: "Refaire une cage d'escalier peut coûter de 10 000 € à plus de 30 000 € selon les prestations. Étapes du chantier en immeuble occupé, majorités de vote, financement : le guide complet."
 date: "2026-08-17"
-lastUpdated: "2026-08-17"
+lastUpdated: "2026-08-18"
 slug: "refection-parties-communes-copropriete"
 published: true
 cover: "/images/articles/parties-communes-cage-escalier.webp"
@@ -20,7 +20,7 @@ La réfection des parties communes est le chantier que les copropriétés repous
 
 > **Ce qu'il faut retenir**
 > - Une réfection classique (peinture, sols, éclairage) se vote à la **majorité simple de l'article 24** — les améliorations relèvent de l'article 25, avec une passerelle méconnue (article 25-1) quand le vote échoue de peu.
-> - Comptez de **10 000 à 30 000 €** pour une cage d'escalier de 3 à 4 étages selon l'étendue des prestations — et méfiez-vous des prix « au m² » : deux unités différentes circulent et faussent toutes les comparaisons.
+> - Le budget peut aller de **10 000 € à plus de 30 000 €** pour une cage d'escalier de 3 à 4 étages selon l'étendue des prestations — et méfiez-vous des prix « au m² » : deux unités différentes circulent et faussent toutes les comparaisons.
 > - MaPrimeRénov' Copropriétés ne finance **pas** la réfection esthétique. Le vrai levier, c'est le fonds de travaux obligatoire et l'inscription au plan pluriannuel de travaux (PPT).
 > - Le chantier se fait **en immeuble occupé** : le phasage pour maintenir l'accès aux logements est aussi important que la qualité des finitions.
 
@@ -76,7 +76,7 @@ La réponse tient dans le phasage. L'escalier reste praticable en permanence : o
 
 Reste les nuisances honnêtement annoncées : de la poussière lors des ponçages malgré l'aspiration, des odeurs lors des phases de peinture des boiseries, du bruit par séquences. Un chantier bien phasé ne supprime pas ces désagréments — il les concentre, les annonce et les écourte. C'est exactement là que se joue la différence entre un chantier subi et un chantier accepté par les résidents.
 
-## Au-delà du chantier : majorités, financement, obligations
+## Les démarches : majorités, financement, obligations
 
 Avant le premier coup de pinceau, une réfection se joue en assemblée générale. Trois sujets y reviennent systématiquement : la majorité requise pour voter, le financement, et les obligations réglementaires qui s'invitent au passage.
 
