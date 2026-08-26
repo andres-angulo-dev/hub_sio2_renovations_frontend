@@ -14,7 +14,7 @@ youtubeId: "V9bhfbhXtM4"
 zonesSlug: "renovation-salle-de-bains"
 ---
 
-La salle de bains, c'est l'endroit où on entasse trois corps de métier dans un espace qu'on gagne au centimètre. Plomberie, électricité, carrelage — tout ça dans 5 m² si vous êtes chanceux, 3 m² si vous habitez un studio haussmannien. À Paris, s'y ajoutent les colonnes montantes vétustes, les syndics sourcilleux, et depuis septembre 2025, de nouvelles obligations électriques que beaucoup d'artisans ne mentionnent pas encore spontanément dans leurs devis. Ce guide chiffre les budgets que je rencontre sur le terrain, clarifie ce qui nécessite une autorisation et détaille ce qui change concrètement en 2026.
+La salle de bains, c'est l'endroit où on entasse trois corps de métier dans un espace qu'on gagne au centimètre. Plomberie, électricité, carrelage — tout ça dans 5 m² si vous êtes chanceux, 3 m² si vous habitez un studio haussmannien. À Paris, s'y ajoutent les colonnes montantes vétustes, les syndics sourcilleux, et depuis septembre 2025, de nouvelles obligations électriques que beaucoup d'artisans ne mentionnent pas encore spontanément dans leurs devis. Ce guide chiffre les budgets que nous rencontrons sur le terrain, clarifie ce qui nécessite une autorisation et détaille ce qui change concrètement en 2026.
 
 > **À retenir**
 > - Une rénovation complète de salle de bains à Paris coûte entre **1 000 et 3 000 €/m²** — soit 20 à 30 % de plus qu'en province ([Travaux.com, 2026](https://www.travaux.com/construction-renovation-maison/guide-des-prix/prix-dune-renovation-de-salle-de-bains)).
@@ -51,7 +51,7 @@ Une **déclaration préalable de travaux** entre en jeu seulement dans ces cas :
 - Pose d'une VMC avec grille en façade visible
 - Transformation d'un local non habitable en espace sanitaire avec modification de la structure
 
-En copropriété, c'est une autre affaire. Le règlement de copropriété prime sur votre bon vouloir. Tout déplacement d'une cloison porteuse ou intervention sur une colonne d'eau partagée nécessite une déclaration au syndic — et souvent un vote en assemblée générale. Lisez votre règlement avant de commander quoi que ce soit : j'ai vu des chantiers bloqués trois mois parce que le client avait signé le devis sans vérifier ce point.
+En copropriété, c'est une autre affaire. Le règlement de copropriété prime sur votre bon vouloir. Tout déplacement d'une cloison porteuse ou intervention sur une colonne d'eau partagée nécessite une déclaration au syndic — et souvent un vote en assemblée générale. Lisez votre règlement avant de commander quoi que ce soit : nous avons vu des chantiers bloqués trois mois parce que le client avait signé le devis sans vérifier ce point.
 
 Les périmètres protégés ajoutent encore une couche. Dans le Marais, l'île Saint-Louis ou le 7e arrondissement, les Architectes des Bâtiments de France peuvent imposer des prescriptions sur des éléments patrimoniaux — carreaux de ciment, menuiseries, sols en pierre — même pour des travaux intérieurs. Renseignez-vous en mairie d'arrondissement avant de démarrer.
 

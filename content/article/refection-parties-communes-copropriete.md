@@ -16,7 +16,7 @@ authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
 zonesSlug: "renovation-complete"
 ---
 
-La réfection des parties communes est le chantier que les copropriétés repoussent le plus longtemps. Une cage d'escalier se dégrade lentement : personne ne se réveille un matin avec un hall inutilisable. Alors on attend, l'ordre du jour de l'AG est déjà chargé, et dix ou quinze ans passent. Quand le sujet arrive enfin au vote, les copropriétaires découvrent en même temps le prix, les règles de majorité et la question qui fâche : comment on finance. J'interviens sur ces chantiers pour des syndics et des conseils syndicaux à Paris et en proche banlieue, et c'est presque toujours le même parcours. Ce guide le déroule dans l'ordre où vous allez réellement le vivre.
+La réfection des parties communes est le chantier que les copropriétés repoussent le plus longtemps. Une cage d'escalier se dégrade lentement : personne ne se réveille un matin avec un hall inutilisable. Alors on attend, l'ordre du jour de l'AG est déjà chargé, et dix ou quinze ans passent. Quand le sujet arrive enfin au vote, les copropriétaires découvrent en même temps le prix, les règles de majorité et la question qui fâche : comment on finance. Nous intervenons sur ces chantiers pour des syndics et des conseils syndicaux à Paris et en proche banlieue, et c'est presque toujours le même parcours. Ce guide le déroule dans l'ordre où vous allez réellement le vivre.
 
 > **Ce qu'il faut retenir**
 > - Une réfection classique (peinture, sols, éclairage) se vote à la **majorité simple de l'article 24** — les améliorations relèvent de l'article 25, avec une passerelle méconnue (article 25-1) quand le vote échoue de peu.

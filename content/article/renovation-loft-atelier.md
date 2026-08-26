@@ -16,7 +16,7 @@ authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
 zonesSlug: "renovation-complete"
 ---
 
-J'interviens sur des ateliers du Bas-Montreuil depuis dix ans, et le point commun de tous ces chantiers, c'est la surprise des acquéreurs sur ce que ça implique vraiment. Rénover un appartement standard, c'est travailler sur un bien conçu pour être habité. Rénover un atelier ou une ancienne unité industrielle, c'est inverser la logique : le bâtiment n'a pas été prévu pour vous, vous devez tout inventer. Les réseaux, le confort thermique, la distribution des pièces. Ces chantiers se passent bien quand on sait ce qu'on fait. Ils tournent mal quand on les aborde comme une rénovation classique.
+Nous intervenons sur des ateliers du Bas-Montreuil depuis dix ans, et le point commun de tous ces chantiers, c'est la surprise des acquéreurs sur ce que ça implique vraiment. Rénover un appartement standard, c'est travailler sur un bien conçu pour être habité. Rénover un atelier ou une ancienne unité industrielle, c'est inverser la logique : le bâtiment n'a pas été prévu pour vous, vous devez tout inventer. Les réseaux, le confort thermique, la distribution des pièces. Ces chantiers se passent bien quand on sait ce qu'on fait. Ils tournent mal quand on les aborde comme une rénovation classique.
 
 > **Ce qu'il faut retenir**
 > - Un atelier reconverti n'a en général aucun réseau résidentiel : plomberie, évacuations et chauffage sont à créer de zéro.
