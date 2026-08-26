@@ -24,7 +24,7 @@ Devant un parquet terne, rayé, taché, le premier réflexe est presque toujours
 > - En **copropriété**, changer de revêtement de sol engage l'acoustique : poser un parquet sans sous-couche résiliente là où il y avait une moquette peut constituer un trouble anormal de voisinage.
 > - **TVA à 10 %** dans un logement achevé depuis plus de deux ans — si l'entreprise facture la TVA (un artisan en franchise n'en facture pas : comparez les totaux réellement payés).
 
-## Votre parquet est-il récupérable ? Le diagnostic en trois questions
+## Votre parquet est-il récupérable ? Le diagnostic en trois points
 
 **Quel est son type ?** Un **parquet massif** (lames de bois plein, souvent cloué sur lambourdes dans l'ancien) possède une couche d'usure de plusieurs millimètres : chaque ponçage en retire environ un, il supporte donc plusieurs rénovations sur sa vie. Un **contrecollé** n'a que 2 à 4 mm de bois noble au-dessus de son support : une à deux rénovations, pas plus — vérifiez l'épaisseur restante sur une lame déposée ou au niveau d'une grille de ventilation. Un **stratifié** n'est pas du bois mais un décor imprimé : il ne se ponce pas, il se remplace.
 

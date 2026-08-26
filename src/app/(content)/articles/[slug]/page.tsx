@@ -62,14 +62,17 @@ function estimateReadingTime(html: string): number {
 // Splits article HTML into { body, faqItems }.
 // body = prose without the FAQ section (injected into the prose block).
 // faqItems = extracted Q&A pairs with answerHtml for accordion rendering.
-// Looks for an H2 containing "questions" (case-insensitive) as the FAQ boundary.
+// Looks for the "Questions fréquentes" H2 as the FAQ boundary — the exact
+// heading our articles use. Matching a bare "questions" is too greedy: any
+// body H2 containing the word (e.g. "…en trois questions") would be
+// mistaken for the FAQ and truncate the article there.
 // Returns faqItems: null when no FAQ section is detected — accordions are not rendered.
 function splitArticleHtml(html: string): {
   body: string;
   faqItems: Array<{ question: string; answerHtml: string }> | null;
 } {
   const strip = (s: string) => s.replace(/<[^>]+>/g, '').trim();
-  const faqIdx = html.search(/<h2[^>]*>[^<]*[Qq]uestions[^<]*<\/h2>/);
+  const faqIdx = html.search(/<h2[^>]*>[^<]*[Qq]uestions\s+fr[ée]quentes[^<]*<\/h2>/);
   if (faqIdx === -1) return { body: html, faqItems: null };
   const body = html.slice(0, faqIdx);
   const afterFaq = html.slice(faqIdx);
