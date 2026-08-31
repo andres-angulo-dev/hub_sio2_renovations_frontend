@@ -1,0 +1,107 @@
+# .github/workflows/social-publish.yml
+# Drafts Facebook + LinkedIn posts when a NEW article lands on main, then waits
+# for manual approval (environment "social-publish") before publishing.
+#
+# Design notes:
+# - Only ADDED files trigger drafts (--diff-filter=A): editing or fixing an
+#   existing article never re-posts it to social networks.
+# - The publish job is gated by the "social-publish" environment, which must be
+#   configured in repo Settings > Environments with a required reviewer.
+# - DRY_RUN comes from the repository variable SOCIAL_DRY_RUN (default: true).
+#   Flip it to "false" only after a successful dry-run — activation is a
+#   deliberate, human decision.
+
+name: Social publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/article/*.md'
+
+jobs:
+  detect:
+    name: Detect new articles
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.new.outputs.files }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: List added article files
+        id: new
+        run: |
+          # github.event.before is all-zeros on force pushes / branch creation —
+          # fall back to the last commit only in that case.
+          BEFORE="${{ github.event.before }}"
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+            BEFORE="${{ github.sha }}~1"
+          fi
+          FILES=$(git diff --diff-filter=A --name-only "$BEFORE" "${{ github.sha }}" -- 'content/article/*.md' | grep -v 'fixture' | tr '\n' ' ' || true)
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+          echo "New article files: ${FILES:-none}"
+
+  draft:
+    name: Generate post drafts
+    needs: detect
+    if: needs.detect.outputs.files != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Generate drafts
+        env:
+          FILES: ${{ needs.detect.outputs.files }}
+        run: node scripts/generate-social-posts.js $FILES > social-posts.json
+
+      - name: Show drafts in run summary
+        run: |
+          echo "## Brouillons de posts (en attente d'approbation)" >> "$GITHUB_STEP_SUMMARY"
+          node -e "
+            const posts = require('./social-posts.json');
+            for (const p of posts) {
+              console.log('### ' + p.slug + '\n');
+              console.log('**Facebook**\n\n\`\`\`\n' + p.facebook + '\n\`\`\`\n');
+              console.log('**LinkedIn**\n\n\`\`\`\n' + p.linkedin + '\n\`\`\`\n');
+            }
+          " >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: social-posts
+          path: social-posts.json
+
+  publish:
+    name: Publish (after approval)
+    needs: [detect, draft]
+    if: needs.detect.outputs.files != ''
+    runs-on: ubuntu-latest
+    # Pauses here until a required reviewer approves the deployment.
+    environment: social-publish
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: social-posts
+
+      - name: Publish posts
+        env:
+          DRY_RUN: ${{ vars.SOCIAL_DRY_RUN != 'false' }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
+          LINKEDIN_TOKEN: ${{ secrets.LINKEDIN_TOKEN }}
+        run: node scripts/publish-social-posts.js social-posts.json
