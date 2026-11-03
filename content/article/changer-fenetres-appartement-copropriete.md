@@ -14,6 +14,38 @@ reviewed_by: "SiO2 Rénovations"
 author: "Herney Angulo Osorio"
 authorTitle: "Artisan expert en travaux de rénovation, SiO2 Rénovations"
 zonesSlug: "renovation-complete"
+socialFacebook: |-
+  En copropriété, changer ses fenêtres sans vote de l'AG, c'est risquer de devoir les déposer.
+
+  Dès que le remplacement modifie l'aspect extérieur de l'immeuble, il faut un vote en assemblée générale, à la majorité de l'article 25, avant les travaux. Sans ce vote, le syndic peut exiger la remise en état.
+
+  Si le modèle change, une déclaration préalable en mairie s'ajoute : l'accord de la copropriété ne la remplace pas.
+
+  Dans notre guide, on reprend l'ordre qui évite les ennuis : règlement, vote, mairie, puis type de pose, matériau et prix.
+
+  👉 À lire avant de commander vos fenêtres :
+  https://hub.sio2renovations.com/articles/changer-fenetres-appartement-copropriete
+socialLinkedin: |-
+  Changer ses fenêtres en copropriété : ni le syndic ni le conseil syndical ne peuvent l'autoriser.
+  Dès que l'aspect extérieur de l'immeuble change, c'est l'assemblée générale qui vote, à la majorité de l'article 25.
+
+  C'est le point de départ de notre nouveau guide, consacré au remplacement des fenêtres d'appartement à Paris.
+
+  L'ordre qui évite les conflits :
+  → lire le règlement de copropriété et les derniers procès-verbaux ;
+  → faire voter le projet en AG, avant tout engagement ;
+  → déposer une déclaration préalable en mairie si le modèle change ;
+  → seulement ensuite, commander.
+
+  Deux points souvent mal compris :
+  • La mairie ne vérifie pas l'accord de la copropriété, et cet accord ne remplace pas la déclaration préalable.
+  • Des travaux lancés sans autorisation sont irréguliers : le syndic peut exiger la remise en état, jusqu'à la dépose des nouvelles fenêtres.
+
+  Le guide détaille aussi le choix entre pose en rénovation et dépose totale, les valeurs à lire sur une fiche technique (Uw, Sw, Rw + Ctr) et la question des entrées d'air.
+
+  L'article complet ci-dessous 👇
+
+  #copropriété #syndic #fenêtres #rénovation #Paris
 ---
 
 Des fenêtres qui laissent passer l'air et le bruit de la rue : les remplacer ressemble à un achat comme un autre. En copropriété, ce n'en est pas un. Selon le règlement de votre immeuble, la fenêtre peut être privative, commune, ou un peu des deux. Dans tous les cas, elle fait partie de ce que l'on voit de la rue.

@@ -25,13 +25,19 @@ function hashtagsFromTags(tags = []) {
 }
 
 // Builds both platform drafts from one article's frontmatter.
-// The description is written as the article's hook — it doubles as post copy.
+// Hand-written copy wins: when the article carries `socialFacebook` / `socialLinkedin`
+// (written by the platform agents and validated by the senior community-manager
+// review at article time), it is used verbatim. Otherwise we fall back to the
+// generic template below, built from the title and the SEO description.
 function draftsFor(fm) {
   const url = fm.canonical || `${HUB_BASE_URL}/articles/${fm.slug}`;
   // Strip the "(2026)" suffix from titles: useful for SEO, noisy in a social post.
   const title = fm.title.replace(/\s*\(\d{4}\)\s*$/, '');
 
-  const facebook = [
+  // Non-empty string check: an empty or missing field must not publish a blank post.
+  const custom = (value) => (typeof value === 'string' && value.trim() ? value.trim() : null);
+
+  const facebook = custom(fm.socialFacebook) ?? [
     `📝 Nouvel article : ${title}`,
     '',
     fm.description,
@@ -39,7 +45,7 @@ function draftsFor(fm) {
     `👉 À lire ici : ${url}`,
   ].join('\n');
 
-  const linkedin = [
+  const linkedin = custom(fm.socialLinkedin) ?? [
     `${title}`,
     '',
     fm.description,

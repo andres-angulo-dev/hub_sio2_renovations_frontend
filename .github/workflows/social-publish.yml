@@ -18,6 +18,15 @@ on:
     branches: [main]
     paths:
       - 'content/article/*.md'
+  # Manual trigger: (re)publish chosen articles, e.g. after adding hand-written
+  # socialFacebook / socialLinkedin copy to an article that is already live.
+  # Still goes through the same draft summary + "social-publish" approval gate.
+  workflow_dispatch:
+    inputs:
+      articles:
+        description: 'Article files, space-separated (e.g. content/article/foo.md)'
+        required: true
+        type: string
 
 jobs:
   detect:
@@ -32,7 +41,25 @@ jobs:
 
       - name: List added article files
         id: new
+        env:
+          MANUAL_ARTICLES: ${{ github.event.inputs.articles }}
         run: |
+          # Manual run: take the requested files as-is, keeping only existing
+          # content/article/*.md paths (the input is free text, so it is filtered,
+          # never executed).
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            FILES=""
+            for f in $MANUAL_ARTICLES; do
+              case "$f" in
+                content/article/*.md) [ -f "$f" ] && FILES="$FILES $f" ;;
+              esac
+            done
+            # Fixtures are dropped later by generate-social-posts.js.
+            FILES=$(echo $FILES)
+            echo "files=$FILES" >> "$GITHUB_OUTPUT"
+            echo "Manually requested article files: ${FILES:-none}"
+            exit 0
+          fi
           # github.event.before is all-zeros on force pushes / branch creation —
           # fall back to the last commit only in that case.
           BEFORE="${{ github.event.before }}"
